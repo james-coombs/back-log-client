@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Back\Log</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <h1>Welcome to Back\Log</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <h2 class='info'>==>Info Here<==</h2>
+
+      <div class="user-auth">
+      <form id="createUser">
+        <input name="username[username]" type="text" placeholder="Username">
+        <input name="credentials[email]" type="text" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+        <input type="Submit" value="Create User">
+      </form>
+
+      <form id=signInUser>
+        <input name="credentials[email]" type="text" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <input type="Submit" value="Sign In">
+      </form>
+
+      <form id="change-password">
+        <input name="passwords[old]" type="password" placeholder="Old Password">
+        <input name="passwords[new]" type="password" placeholder="New Password">
+        <input type="Submit" value="Change Password">
+      </form>
+
+      <button type="button" class="sign-out-button">Sign Out</button>
+    </div>
+
+    <div class="log-crud">
+      <form id="createLog">
+        <input name="title[title]" type="text" placeholder="Title">
+        <input name="platform[platform]" type="text" placeholder="Platform">
+        <input name="players[players]" type="text" placeholder="Players">
+        <input name="stage[stage]" type="text" placeholder="Stage">
+        <input name="notes[notes]" type="text" placeholder="Notes">
+        <input type="Submit" value="Create Log">
+      </form>
+
+      <form id="updateLog">
+        <input name="title[title]" type="text" placeholder="Title">
+        <input name="platform[platform]" type="text" placeholder="Platform">
+        <input name="players[players]" type="text" placeholder="Players">
+        <input name="stage[stage]" type="text" placeholder="Stage">
+        <input name="notes[notes]" type="text" placeholder="Notes">
+        <button type="submit" value="setPassedToTrue">I Passed</button>
+        <input type="Submit" value="Update Log">
+      </form>
+
+      <form id="getLogById">
+        <input name="getLogById" type="number" placeholder="Log ID">
+        <input type="submit" value="GetLogByID">
+      </form>
+
+      <button type="button" class="DeleteLogButton">Delete Log</button>
+      <button type="button" class="getLogsButton">Get Logs</button>
+    </div>
+
     </body>
 </html>
