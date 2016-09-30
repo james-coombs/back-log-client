@@ -5,3 +5,11 @@
 
 // use require without a reference to ensure a file is bundled
 require('./example');
+
+const userAuth = require('./user-auth/events');
+const logCrud = require('./log-crud/events');
+
+$(() => {
+  userAuth.userAddHandlers();
+  logCrud.logAddHandlers();
+});
