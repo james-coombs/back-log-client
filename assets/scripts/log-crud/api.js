@@ -8,16 +8,16 @@ const createLog = function(data) {
   return $.ajax({
     url: app.host + '/logs',
     method: 'POST',
-    data: data,
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token,
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    data,
   });
 };
 
-const onUpdateLog = function(data) {
+const updateLog = function(data) {
   return $.ajax({
-    url: app.host + '/logs/' + app.log.id,
+    url: app.host + '/logs/2',
     method: 'PATCH',
     //headers: {
     //   Authorization: 'Token token=' + app.user.token,
@@ -58,7 +58,7 @@ const deleteLog = function() {
 
 module.exports = {
   createLog,
-  onUpdateLog,
+  updateLog,
   deleteLog,
   getLogs,
   getLogById,

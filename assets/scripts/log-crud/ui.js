@@ -3,10 +3,9 @@
 const app = require('../app.js');
 
 const onCreateLogSuccess = function(data) {
-  if (data) {
-    $('.info').text(data.logs);
-  }
-};
+  //app.logs = data.logs;
+    $('.info').text('log created' + data.logs);
+  };
 
 const updateLogSuccess = function(data) {
   if (data) {
@@ -35,7 +34,7 @@ const deleteLogSuccess = function() {
 };
 
 const failure = function() {
-  $('.info').text('Log deleted');
+  $('.info').text('Log failure');
 };
 
 module.exports = {

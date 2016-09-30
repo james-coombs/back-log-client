@@ -7,7 +7,7 @@ const api = require('./api');
 const ui = require('./ui');
 
 const onCreateLog = function(event) {
-let data = getFormFields(this);
+let data = getFormFields(event.target);
  console.log(data);
   event.preventDefault();
   api.createLog(data)
