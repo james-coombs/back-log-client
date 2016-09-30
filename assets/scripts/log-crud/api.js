@@ -19,9 +19,9 @@ const updateLog = function(data) {
   return $.ajax({
     url: app.host + '/logs/2',
     method: 'PATCH',
-    //headers: {
-    //   Authorization: 'Token token=' + app.user.token,
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
     data: data,
   });
 };
@@ -30,9 +30,9 @@ const getLogs = function() {
   return $.ajax({
     url: app.host + '/logs',
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token,
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -40,9 +40,9 @@ const getLogById = function(data) {
   return $.ajax({
     url: app.host + '/logs/' + data.getLogById,
     method: 'GET',
-    // headers: {
-    //   Authorization: 'Token token=' + app.user.token,
-    // },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
@@ -50,9 +50,9 @@ const deleteLog = function() {
   return $.ajax({
     url: app.host + '/logs/' + app.log.id,
     method: 'DELETE',
-  //   headers: {
-  //     Authorization: 'Token token=' + app.user.token,
-  //   },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
   });
 };
 
