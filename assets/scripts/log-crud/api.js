@@ -30,9 +30,9 @@ const getLogs = function() {
   return $.ajax({
     url: app.host + '/logs',
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
+    // headers: {
+    //   Authorization: 'Token token=' + app.user.token,
+    // },
   });
 };
 
