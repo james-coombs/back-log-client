@@ -35,8 +35,6 @@ const onDeleteLogById = function(event) {
 const onGetLogById = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  // console.log(data);
-  //$('.game-board').hide();
   api.getLogById(data)
     .done(ui.getLogByIdSuccess)
     .fail(ui.failure);

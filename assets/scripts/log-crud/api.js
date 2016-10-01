@@ -56,6 +56,7 @@ const deleteLogById = function(data) {
   });
 };
 
+
 module.exports = {
   createLog,
   updateLog,
