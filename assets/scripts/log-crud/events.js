@@ -28,7 +28,7 @@ const onDeleteLogById = function(event) {
   let data = getFormFields(event.target);
   $('.info').text('Deleted Log');
   api.deleteLogById(data)
-    .done(ui.deleteLogById)
+    .done(ui.deleteLogByIdSuccess)
     .fail(ui.failure);
 };
 
