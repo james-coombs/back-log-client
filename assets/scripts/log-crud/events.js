@@ -18,6 +18,7 @@ let data = getFormFields(event.target);
 const onUpdateLog = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+    console.log(data);
   api.updateLog(data)
     .done(ui.updateLogSuccess)
     .fail(ui.failure);
@@ -32,7 +33,7 @@ const onDeleteLogById = function(event) {
     .fail(ui.failure);
 };
 
-const onGetLogById = function(event) {
+const onSelectLog = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.getLogById(data)
@@ -47,12 +48,20 @@ const onGetLogs = function () {
   .fail(ui.failure);
 };
 
+const onSetLogToPassed = function() {
+  event.preventDefault();
+  api.setLogToPassed()
+    .done(ui.updateLogSuccess)
+    .fail(ui.failure);
+};
+
 const logAddHandlers = function () {
   $('#createLog').on('submit', onCreateLog);
   $('#updateLog').on('submit', onUpdateLog);
-  $('#getLogById').on('submit', onGetLogById);
+  $('.togglePassed').on('checked', onSetLogToPassed);
   $('#deleteLogById').on('submit', onDeleteLogById);
   $('.getLogsButton').on('click', onGetLogs);
+  $('#selectLog').on('submit', onSelectLog);
 };
 
 module.exports = {
@@ -61,5 +70,5 @@ module.exports = {
   onUpdateLog,
   onDeleteLogById,
   onGetLogs,
-  onGetLogById,
+  onSelectLog,
 };

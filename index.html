@@ -45,20 +45,28 @@
         <input type="Submit" value="Create Log">
       </form>
 
+      <!-- <form id="selectLogById">
+        <input name="log[id]" type="text" placeholder="Select Log By Id">
+        <input type="Submit" value="Select Log By Id">
+      </form> -->
+
+      <form id="selectLog">
+        <input name="id[id]" type="text" placeholder="Select Log By ID">
+        <input type="Submit" value="Select Log">
+      </form>
+
       <form id="updateLog">
-        <input name="log[title]" type="text" placeholder="Title">
-        <input name="log[platform]" type="text" placeholder="Platform">
-        <input name="log[players]" type="text" placeholder="Players">
         <input name="log[stage]" type="text" placeholder="Stage">
         <input name="log[notes]" type="text" placeholder="Notes">
-        <button type="submit" value="setPassedToTrue">I Passed</button>
+        <input type="checkbox" value="togglePassed"> <label>I Passed</label>
         <input type="Submit" value="Update Log">
       </form>
 
-      <form id="getLogById">
+
+      <!-- <form id="getLogById">
         <input name="getLogById" type="number" placeholder="Log ID">
         <input type="submit" value="Get Log By ID">
-      </form>
+      </form> -->
 
       <form id="deleteLogById">
         <input name="deleteLogById" type="number" placeholder="Log ID">

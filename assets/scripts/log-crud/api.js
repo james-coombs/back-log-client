@@ -2,8 +2,6 @@
 
 const app = require('../app.js');
 
-// const getFormFields = require('../../../lib/get-form-fields');
-
 const createLog = function(data) {
   return $.ajax({
     url: app.host + '/logs',
@@ -17,12 +15,27 @@ const createLog = function(data) {
 
 const updateLog = function(data) {
   return $.ajax({
-    url: app.host + '/logs/2',
+    url: app.host + '/logs/' + app.log.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
     data: data,
+  });
+};
+
+const setLogToPassed = function() {
+  return $.ajax({
+    url: app.host + '/logs/' + app.logs,
+    method: 'PATCH',
+    data: {
+      "log": {
+      "passed": "True",
+   }
+ },
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    }
   });
 };
 
@@ -38,7 +51,7 @@ const getLogs = function() {
 
 const getLogById = function(data) {
   return $.ajax({
-    url: app.host + '/logs/' + data.getLogById,
+    url: app.host + '/logs/' + data,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -62,5 +75,6 @@ module.exports = {
   updateLog,
   deleteLogById,
   getLogs,
+  setLogToPassed,
   getLogById,
 };
