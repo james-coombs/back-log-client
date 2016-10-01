@@ -23,11 +23,12 @@ const onUpdateLog = function(event) {
     .fail(ui.failure);
 };
 
-const onDeleteLog = function() {
+const onDeleteLogById = function(event) {
   event.preventDefault();
+  let data = getFormFields(event.target);
   $('.info').text('Deleted Log');
-  api.deleteLog()
-    .done(ui.deleteLogSuccess)
+  api.deleteLogById(data)
+    .done(ui.deleteLogById)
     .fail(ui.failure);
 };
 
@@ -52,7 +53,7 @@ const logAddHandlers = function () {
   $('#createLog').on('submit', onCreateLog);
   $('#updateLog').on('submit', onUpdateLog);
   $('#getLogById').on('submit', onGetLogById);
-  $('.DeleteLogButton').on('click', onDeleteLog);
+  $('#deleteLogById').on('submit', onDeleteLogById);
   $('.getLogsButton').on('click', onGetLogs);
 };
 
@@ -60,7 +61,7 @@ module.exports = {
   logAddHandlers,
   onCreateLog,
   onUpdateLog,
-  onDeleteLog,
+  onDeleteLogById,
   onGetLogs,
   onGetLogById,
 };

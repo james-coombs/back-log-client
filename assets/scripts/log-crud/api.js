@@ -46,9 +46,9 @@ const getLogById = function(data) {
   });
 };
 
-const deleteLog = function() {
+const deleteLogById = function(data) {
   return $.ajax({
-    url: app.host + '/logs/' + app.log.id,
+    url: app.host + '/logs/' + data.deleteLogById,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -59,7 +59,7 @@ const deleteLog = function() {
 module.exports = {
   createLog,
   updateLog,
-  deleteLog,
+  deleteLogById,
   getLogs,
   getLogById,
 };
