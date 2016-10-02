@@ -24,24 +24,9 @@ const updateLog = function(data) {
   });
 };
 
-const setLogToPassed = function() {
+const selectLog = function(data) {
   return $.ajax({
-    url: app.host + '/logs/' + app.logs,
-    method: 'PATCH',
-    data: {
-      "log": {
-      "passed": "True",
-   }
- },
-    headers: {
-      Authorization: 'Token token=' + app.user.token,
-    }
-  });
-};
-
-const getLogs = function() {
-  return $.ajax({
-    url: app.host + '/logs',
+    url: app.host + '/logs/' + data.selectLog,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -49,9 +34,25 @@ const getLogs = function() {
   });
 };
 
-const getLogById = function(data) {
+// const setLogToPassed = function(data) {
+//   console.log(data);
+//   return $.ajax({
+//     url: app.host + '/logs/' + data.setLogToPassed,
+//     method: 'PATCH',
+//     data: {
+//       "log": {
+//         "title": "NEW TITLE",
+//     }
+//  },
+//     headers: {
+//       Authorization: 'Token token=' + app.user.token,
+//     }
+//   });
+// };
+
+const getLogs = function() {
   return $.ajax({
-    url: app.host + '/logs/' + data,
+    url: app.host + '/logs',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -75,6 +76,6 @@ module.exports = {
   updateLog,
   deleteLogById,
   getLogs,
-  setLogToPassed,
-  getLogById,
+  // setLogToPassed,
+  selectLog,
 };
