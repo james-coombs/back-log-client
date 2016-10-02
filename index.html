@@ -8,33 +8,88 @@
       <script src="assets/scripts/code/konami.js"></script>
     </head>
     <body class="container-fluid">
+
+      <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign In
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <form id=signInUser>
+            <input name="credentials[email]" type="text" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input type="Submit" value="Sign In">
+          </form>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Sign Up
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <form id="createUser">
+            <input name="username[username]" type="text" placeholder="Username">
+            <input name="credentials[email]" type="text" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+            <input type="Submit" value="Create User">
+          </form>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change Password
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dLabel">
+          <form id="change-password">
+            <input name="passwords[old]" type="password" placeholder="Old Password">
+            <input name="passwords[new]" type="password" placeholder="New Password">
+            <input type="Submit" value="Change Password">
+          </form>
+        </ul>
+      </div>
+
+<button type="button" class="sign-out-button">Sign Out</button>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Create Log
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <form id="createLog">
+          <input name="log[title]" type="text" placeholder="Title">
+          <input name="log[platform]" type="text" placeholder="Platform">
+          <input name="log[players]" type="text" placeholder="Players">
+          <input name="log[stage]" type="text" placeholder="Stage">
+          <input name="log[notes]" type="text" placeholder="Notes">
+          <input type="Submit" value="Create Log">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
       <h1>Welcome to Back\Log</h1>
 
       <h2 class='info'>==>Info Here<==</h2>
-
-      <div class="user-auth">
-      <form id="createUser">
-        <input name="username[username]" type="text" placeholder="Username">
-        <input name="credentials[email]" type="text" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-        <input type="Submit" value="Create User">
-      </form>
-
-      <form id=signInUser>
-        <input name="credentials[email]" type="text" placeholder="Email">
-        <input name="credentials[password]" type="password" placeholder="Password">
-        <input type="Submit" value="Sign In">
-      </form>
-
-      <form id="change-password">
-        <input name="passwords[old]" type="password" placeholder="Old Password">
-        <input name="passwords[new]" type="password" placeholder="New Password">
-        <input type="Submit" value="Change Password">
-      </form>
-
-      <button type="button" class="sign-out-button">Sign Out</button>
-    </div>
 
     <div class="log-crud">
       <form id="createLog">
@@ -64,6 +119,30 @@
 
       <button type="button" class="getLogsButton">Get All User Logs</button>
     </div>
+
+    <div class="user-auth">
+    <form id="createUser">
+      <input name="username[username]" type="text" placeholder="Username">
+      <input name="credentials[email]" type="text" placeholder="Email">
+      <input name="credentials[password]" type="password" placeholder="Password">
+      <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+      <input type="Submit" value="Create User">
+    </form>
+
+    <form id=signInUser>
+      <input name="credentials[email]" type="text" placeholder="Email">
+      <input name="credentials[password]" type="password" placeholder="Password">
+      <input type="Submit" value="Sign In">
+    </form>
+
+    <form id="change-password">
+      <input name="passwords[old]" type="password" placeholder="Old Password">
+      <input name="passwords[new]" type="password" placeholder="New Password">
+      <input type="Submit" value="Change Password">
+    </form>
+
+    <button type="button" class="sign-out-button">Sign Out</button>
+  </div>
 
     </body>
 </html>
