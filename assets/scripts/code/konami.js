@@ -31,7 +31,7 @@ if (key === requiredKey) {
 
   // if the last key is reached, activate cheats
   if (konamiCodePosition === konamiCode.length) {
-    $('.info').text('Lives: 100');
+    $('.info').text('Lives: 99');
   }
 } else {
   konamiCodePosition = 0;}
