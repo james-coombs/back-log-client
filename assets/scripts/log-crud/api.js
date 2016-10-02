@@ -34,22 +34,6 @@ const selectLog = function(data) {
   });
 };
 
-// const setLogToPassed = function(data) {
-//   console.log(data);
-//   return $.ajax({
-//     url: app.host + '/logs/' + data.setLogToPassed,
-//     method: 'PATCH',
-//     data: {
-//       "log": {
-//         "title": "NEW TITLE",
-//     }
-//  },
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token,
-//     }
-//   });
-// };
-
 const getLogs = function() {
   return $.ajax({
     url: app.host + '/logs',
@@ -76,6 +60,5 @@ module.exports = {
   updateLog,
   deleteLogById,
   getLogs,
-  // setLogToPassed,
   selectLog,
 };

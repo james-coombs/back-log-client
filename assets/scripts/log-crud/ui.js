@@ -3,7 +3,6 @@
 const app = require('../app.js');
 
 const onCreateLogSuccess = function(data) {
-  //app.logs = data.logs;
     $('.info').text('log created' + data.logs);
   };
 
@@ -12,11 +11,6 @@ const updateLogSuccess = function(data) {
     $('.info').text(data.log);
   }
 };
-
-// const signInSuccess = function(data) {
-//   app.user = data.user;
-//   $('.info').text(data.user.id);
-// };
 
 const getLogsSuccess = function (data) {
   app.log = data.logs;
