@@ -11,8 +11,10 @@
 
 <body class="container-fluid">
 
-  <h1>Welcome to Back\Log</h1>
-  <h2>Create Logs to Save Your Game Status</h2>
+  <div class="page-header">
+    <h1>Welcome to Back\Log<small> Create Logs to Save Your Games!</small></h1>
+  </div>
+
   <h2 class='info'>==>Info Here<==</h2>
 
 <div class="user-auth">
@@ -59,31 +61,71 @@ Change password
   <button type="button" class="sign-out-button">Sign Out</button>
 </div>
 
+
+
+
   <div class="log-crud">
-    <form id="createLog">
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+  Create Log
+  </button>
+    <div class="collapse" id="collapseCreateLog">
+      <div class="well">
+        <form id="createLog">
+          <input name="log[title]" type="text" placeholder="Title">
+          <input name="log[platform]" type="text" placeholder="Platform">
+          <input name="log[players]" type="text" placeholder="Players">
+          <input name="log[stage]" type="text" placeholder="Stage">
+          <input name="log[notes]" type="text" placeholder="Notes">
+          <input type="Submit" value="Create Log">
+        </form>
+      </div>
+    </div>
+
+    <!-- <form id="createLog">
       <input name="log[title]" type="text" placeholder="Title">
       <input name="log[platform]" type="text" placeholder="Platform">
       <input name="log[players]" type="text" placeholder="Players">
       <input name="log[stage]" type="text" placeholder="Stage">
       <input name="log[notes]" type="text" placeholder="Notes">
       <input type="Submit" value="Create Log">
-    </form>
+    </form> -->
 
-    <form id="selectLog">
-      <input name="selectLog" type="number" placeholder="Select Log By ID">
-      <input type="Submit" value="Select Log">
-    </form>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+  Select Log by Id
+  </button>
+    <div class="collapse" id="collapseSelectLog">
+      <div class="well">
+        <form id="selectLog">
+          <input name="selectLog" type="number" placeholder="Select Log By ID">
+          <input type="Submit" value="Select Log">
+        </form>
+      </div>
+    </div>
 
-    <form id="updateLog">
-      <input name="log[stage]" type="text" placeholder="Stage">
-      <input name="log[notes]" type="text" placeholder="Notes">
-      <input type="Submit" value="Update Log">
-    </form>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
+  Update Log Selected By Id
+  </button>
+    <div class="collapse" id="collapseUpdateLog">
+      <div class="well">
+        <form id="updateLog">
+          <input name="log[stage]" type="text" placeholder="Stage">
+          <input name="log[notes]" type="text" placeholder="Notes">
+          <input type="Submit" value="Update Log">
+        </form>
+      </div>
+    </div>
 
-    <form id="deleteLogById">
-      <input name="deleteLogById" type="number" placeholder="Log ID">
-      <input type="submit" value="Delete Log By Id">
-    </form>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+    Delete a Log by Id
+    </button>
+    <div class="collapse" id="collapseDeleteLog">
+      <div class="well">
+        <form id="deleteLogById">
+          <input name="deleteLogById" type="number" placeholder="Log ID">
+          <input type="submit" value="Delete Log By Id">
+        </form>
+      </div>
+    </div>
 
     <button type="button" class="getLogsButton">Get All User Logs</button>
   </div>
