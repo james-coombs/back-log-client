@@ -13,7 +13,7 @@ The object returned can be used to validate the form data.
 'use strict';
 
 const ajaxDefaults = {
-  url: 'http://localhost:3000',
+  url: 'https://back-log.herokuapp.com',
 };
 
 const myRequest = (data, success, fail) => {
