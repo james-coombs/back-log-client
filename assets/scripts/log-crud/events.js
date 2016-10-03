@@ -52,7 +52,7 @@ const logAddHandlers = function () {
   $('#createLog').on('submit', onCreateLog);
   $('#updateLog').on('submit', onUpdateLog);
   $('#deleteLogById').on('submit', onDeleteLogById);
-  $('.getLogsButton').on('click', onGetLogs);
+  $('#getLogsButton').on('click', onGetLogs);
   $('#selectLog').on('submit', onSelectLog);
 };
 
