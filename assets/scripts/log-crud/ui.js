@@ -4,6 +4,8 @@ const app = require('../app.js');
 
 const showLogs = require('../templates/logs-listing.handlebars');
 
+//const showLog = require('../templates/log-display.handlebars');
+
 const onCreateLogSuccess = function(data) {
     $('.info').text('log created' + data.logs);
   };
@@ -23,7 +25,10 @@ const getLogsSuccess = function (data) {
 
 const getLogByIdSuccess = function (data) {
   app.log = data.log;
-  $('.info').text(data.log.title);
+  $('.info').html("Title:" + " " + data.log.title + ", " + "Platform:" + " " +
+  data.log.platform + ", " + "Players:" + " " + data.log.players + ", " +
+  "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " +data.log.notes);
+  // $('.content').html(showLogs(log));
 };
 
 const deleteLogSuccess = function() {
