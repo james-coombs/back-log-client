@@ -40,7 +40,7 @@ const userAddHandlers = function () {
   $('#createUser').on('submit', onCreateUser);
   $('#signInUser').on('submit', onSignInUser);
   $('#change-password').on('submit', onChangePassword);
-  $('.sign-out-button').on('click', onSignOutUser);
+  $('#signOutButton').on('click', onSignOutUser);
 };
 
 

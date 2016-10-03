@@ -1,33 +1,27 @@
-<h2> User Back Log: </h2>
-{{#each logs}}
-  <h3>{{title}}</h3>
-  {{#if title}}
-    <p>{{title}}</p>
-  {{else}}
-    <p> No Title. </p>
-  {{/if}}
-  <h3>{{platform}}</h3>
-  {{#if platform}}
-    <p>{{platform}}</p>
-  {{else}}
-    <p> No Platform. </p>
-  {{/if}}
-  <h3>{{players}}</h3>
-  {{#if players}}
-    <p>{{players}}</p>
-  {{else}}
-    <p> No Players. </p>
-  {{/if}}
-  <h3>{{stage}}</h3>
-  {{#if stage}}
-    <p>{{stage}}</p>
-  {{else}}
-    <p> No Stage. </p>
-  {{/if}}
-  <h3>{{notes}}</h3>
-  {{#if notes}}
-    <p>{{notes}}</p>
-  {{else}}
-    <p> No Notes. </p>
-  {{/if}}
-{{/each}}
+
+
+<h1>My Backlog:</h1>
+<table>
+  <colgroup span="6"></colgroup>
+  </colgroup>
+    <thead class="log-thead">
+        <th>Id</th>
+        <th>Title</th>
+        <th>Platform</th>
+        <th>Players</th>
+        <th>Stage</th>
+        <th>Notes</th>
+    </thead>
+    <tbody>
+        {{#each logs}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{platform}}</td>
+            <td>{{players}}</td>
+            <td>{{stage}}</td>
+            <td>{{notes}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
