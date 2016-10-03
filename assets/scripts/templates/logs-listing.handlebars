@@ -1,0 +1,9 @@
+<h2> User Logs: </h2>
+{{#each logs}}
+  <h3>{{title}}</h3>
+  {{#if platform}}
+    <p>{{platform}}</p>
+  {{else}}
+    <p> No platform. </p>
+  {{/if}}
+{{/each}}

@@ -2,6 +2,8 @@
 
 const app = require('../app.js');
 
+const showLogs = require('../templates/logs-listing.handlebars');
+
 const onCreateLogSuccess = function(data) {
     $('.info').text('log created' + data.logs);
   };
@@ -15,6 +17,7 @@ const updateLogSuccess = function(data) {
 const getLogsSuccess = function (data) {
   app.log = data.logs;
   $('.info').text(data.logs[0].title);
+  $('.content').html(showLogs(data));
   console.log(data);
 };
 
