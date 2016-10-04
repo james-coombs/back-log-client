@@ -20,7 +20,52 @@
   </div>
 
   <nav class="user-auth">
-    <button type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Sign Up <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <form id="createUser">
+            <input name="credentials[email]" type="text" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+            <input type="Submit" value="Create User">
+          </form>
+        </ul>
+      </li>
+      <li role="presentation" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          Sign In<span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <form id=signInUser>
+            <input name="credentials[email]" type="text" placeholder="Email">
+            <input name="credentials[password]" type="password" placeholder="Password">
+            <input type="Submit" value="Sign In">
+          </form>
+        </ul>
+      </li>
+    </ul>
+
+    <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+Change My Password
+</button>
+    <div class="collapse" id="collapseChangePW">
+      <div class="well">
+        <form id="change-password">
+          <input name="passwords[old]" type="password" placeholder="Old Password">
+          <input name="passwords[new]" type="password" placeholder="New Password">
+          <input type="Submit" value="Change Password">
+        </form>
+      </div>
+    </div>
+
+    <button id="signOutButton" class="for-loged-in-user" type="button">
+    Sign Out of Back\Log
+    </button>
+
+    <!-- <button type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
 Sign Up for Back\Log
 </button>
     <div class="collapse" id="collapseSignUp">
@@ -62,7 +107,7 @@ Change My Password
 
     <button id="signOutButton" class="for-loged-in-user" type="button">
     Sign Out of Back\Log
-    </button>
+    </button> -->
   </nav>
 
   <nav class="log-crud">
