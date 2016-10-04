@@ -17,7 +17,7 @@ const signInSuccess = function(data) {
   $('.user-display').text("Hello " + data.user.email + ", " + "welcome to Back\\Log.");
 };
 
-const signInUserError = function() {
+const signInFailure = function() {
   $('.user-display').text('There was a problem with your Sign In, please try again.');
 };
 
@@ -25,8 +25,16 @@ const changePasswordSuccess = function() {
   $('.user-display').text('Your password was changed.');
 };
 
+const changePasswordFailure = function () {
+  $('.user-display').text('Your password was not changed. Sign in and try again.');
+};
+
 const signOutUserSuccess = function() {
   $('.user-display').text('You are signed out.');
+};
+
+const signOutUserError = function() {
+  $('.user-display').text('You could not be signed out.');
 };
 
 module.exports = {
@@ -35,5 +43,7 @@ module.exports = {
   changePasswordSuccess,
   signOutUserSuccess,
   signInSuccess,
-  signInUserError,
+  signInFailure,
+  changePasswordFailure,
+  signOutUserError,
 };
