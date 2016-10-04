@@ -8,7 +8,7 @@ const ui = require('./ui');
 
 const onCreateLog = function(event) {
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   event.preventDefault();
   api.createLog(data)
     .done(ui.createLogSuccess)
@@ -18,7 +18,7 @@ const onCreateLog = function(event) {
 const onUpdateLog = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
+  // console.log(data);
   api.updateLog(data)
     .done(ui.updateLogSuccess)
     .fail(ui.updateLogfailure);
