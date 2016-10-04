@@ -26,7 +26,7 @@ document.addEventListener('keydown', function(e) {
     konamiCodePosition++;
 
     if (konamiCodePosition === konamiCode.length) {
-      $('.info').text('Lives: 99');
+      $('.user-display').text('Lives: 30');
     }
   } else {
     konamiCodePosition = 0;

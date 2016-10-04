@@ -1,9 +1,12 @@
 .log-crud {
-  float: right;
+  float: left;
+  clear: left;
+  padding: 2px;
 }
 
 .user-auth {
   float: left;
+  padding: 2px;
 }
 
 table {
@@ -20,6 +23,11 @@ td, th {
   text-align: center;
 }
 
-.ack-log-table {
-  text-align: center;
+.content {
+  float: left;
+}
+
+button {
+  background: none;
+  border: 0;
 }
