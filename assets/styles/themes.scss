@@ -27,7 +27,6 @@ td, th {
 .back-logs-table {
   text-align: center;
   display: inline-block;
-
 }
 
 .content {
@@ -43,4 +42,8 @@ button {
 
 button:hover {
     background-color: #d7dbe2;
+}
+
+.update-selected-log-button {
+  display: none;
 }

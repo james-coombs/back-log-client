@@ -38,6 +38,7 @@ const signOutUserSuccess = function() {
   $('.for-loged-in-user').toggle();
   $('.content').toggle();
   $('.content').html("");
+  $('.update-selected-log-button').toggle();
 };
 
 const signOutUserError = function() {
