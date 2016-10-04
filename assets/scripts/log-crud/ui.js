@@ -32,7 +32,7 @@ const getLogByIdSuccess = function(data) {
   app.log = data.log;
   $('.user-display').html("Title:" + " " + data.log.title + ", " + "Platform:" + " " +
     data.log.platform + ", " + "Players:" + " " + data.log.players + ", " +
-    "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " + data.log.notes + ".");
+    "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " + data.log.notes + "." + "You can now use the Update Log function to update this Log.");
 };
 
 const getLogByIdFailure = function() {

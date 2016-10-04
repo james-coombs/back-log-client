@@ -1,6 +1,6 @@
 .log-crud {
-  float: left;
-  clear: left;
+  float: right;
+  clear: none;
   padding: 2px;
 }
 
@@ -24,7 +24,8 @@ td, th {
 }
 
 .content {
-  float: left;
+  display: inline-block;
+  clear: both;
 }
 
 button {
