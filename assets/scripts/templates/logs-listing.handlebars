@@ -1,27 +1,26 @@
-
 <div class="back-logs-table">
-<h1>My Backlog:</h1>
-<table>
-  <colgroup span="6"></colgroup>
+  <h1>My Backlog:</h1>
+  <table>
+    <colgroup span="6"></colgroup>
     <thead>
-        <th>Log Id</th>
-        <th>Title</th>
-        <th>Platform</th>
-        <th>Players</th>
-        <th>Stage</th>
-        <th>Notes</th>
+      <th>Log Id</th>
+      <th>Title</th>
+      <th>Platform</th>
+      <th>Players</th>
+      <th>Stage</th>
+      <th>Notes</th>
     </thead>
     <tbody>
-        {{#each logs}}
+      {{#each logs}}
         <tr>
-            <td>{{id}}</td>
-            <td>{{title}}</td>
-            <td>{{platform}}</td>
-            <td>{{players}}</td>
-            <td>{{stage}}</td>
-            <td>{{notes}}</td>
+          <td>{{id}}</td>
+          <td>{{title}}</td>
+          <td>{{platform}}</td>
+          <td>{{players}}</td>
+          <td>{{stage}}</td>
+          <td>{{notes}}</td>
         </tr>
-        {{/each}}
+      {{/each}}
     </tbody>
-</table>
+  </table>
 </div>

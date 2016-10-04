@@ -25,7 +25,7 @@ const changePasswordSuccess = function() {
   $('.user-display').text('Your password was changed.');
 };
 
-const changePasswordFailure = function () {
+const changePasswordFailure = function() {
   $('.user-display').text('Your password was not changed. Sign in and try again.');
 };
 

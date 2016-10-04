@@ -4,8 +4,6 @@ const app = require('../app.js');
 
 const showLogs = require('../templates/logs-listing.handlebars');
 
-//const showLog = require('../templates/log-display.handlebars');
-
 const createLogSuccess = function(data) {
   $('.user-display').text('log created' + data.logs);
 };

@@ -36,7 +36,7 @@ const onSignOutUser = function() {
     .fail(ui.signOutUserError);
 };
 
-const userAddHandlers = function () {
+const userAddHandlers = function() {
   $('#createUser').on('submit', onCreateUser);
   $('#signInUser').on('submit', onSignInUser);
   $('#change-password').on('submit', onChangePassword);

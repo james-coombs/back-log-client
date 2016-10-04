@@ -10,7 +10,8 @@ let allowedKeys = {
 };
 
 let konamiCode = ['up', 'up', 'down', 'down', 'left', 'right',
-                  'left', 'right', 'a', 'b'];
+  'left', 'right', 'a', 'b'
+];
 
 let konamiCodePosition = 0;
 
