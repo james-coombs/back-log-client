@@ -4,25 +4,29 @@ const app = require('../app.js');
 
 const onCreateUserSuccess = function(data) {
   if (data) {
-    $('.info').text(data.user.id);
+    $('.user-display').text("Hello " + data.user.email + ". " + "Your user Id is " + data.user.id + ".");
   }
+};
+
+const createUserOnError = function() {
+  $('.user-display').text('There was a problem with your Sign Up, please try again.');
 };
 
 const signInSuccess = function(data) {
   app.user = data.user;
-  $('.info').text(data.user.id);
+  $('.user-display').text("Hello " + data.user.email + ", " + "welcome to Back\\Log.");
 };
 
-const createUserOnError = function() {
-  $('.info').text('Error');
+const signInUserError = function() {
+  $('.user-display').text('There was a problem with your Sign In, please try again.');
 };
 
 const changePasswordSuccess = function() {
-  $('.info').text('Password changed');
+  $('.user-display').text('Your password was changed.');
 };
 
 const signOutUserSuccess = function() {
-  $('.info').text('Signed out');
+  $('.user-display').text('You are signed out.');
 };
 
 module.exports = {
@@ -30,5 +34,6 @@ module.exports = {
   createUserOnError,
   changePasswordSuccess,
   signOutUserSuccess,
-  signInSuccess
+  signInSuccess,
+  signInUserError,
 };

@@ -17,7 +17,7 @@ const onSignInUser = function(event) {
   event.preventDefault();
   api.signInUser(event.target)
     .done(ui.signInSuccess)
-    .fail(ui.createUserOnError);
+    .fail(ui.signInUserError);
 };
 
 const onChangePassword = function(event) {
@@ -32,7 +32,7 @@ const onSignOutUser = function() {
   event.preventDefault();
   $('.info').text('Signed out');
   api.signOutUser()
-    .done(ui.signOutSuccess)
+    .done(ui.signOutUserSuccess)
     .fail(ui.failure);
 };
 

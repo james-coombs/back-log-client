@@ -11,128 +11,132 @@
 
 <body class="container-fluid">
 
+  <div class="jumbotron">
+<h1>Welcome to Back\Log<small> Create Logs to Save Your Games!</small></h1>
+</div>
+
   <div class="page-header">
-    <h1>Welcome to Back\Log<small> Create Logs to Save Your Games!</small></h1>
+<h1 class="user-display"></h1>
   </div>
 
-  <nav class="user-auth">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+  <!-- <div class="user-display">=></div> -->
+
+
+      <nav class="user-auth">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
 Sign Up
 </button>
-    <div class="collapse" id="collapseSignUp">
-      <div class="well">
-        <form id="createUser">
-          <input name="credentials[email]" type="text" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-          <input type="Submit" value="Create User">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseSignUp">
+          <div class="well">
+            <form id="createUser">
+              <input name="credentials[email]" type="text" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Password">
+              <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+              <input type="Submit" value="Create User">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
 Sign In
 </button>
-    <div class="collapse" id="collapseSignIn">
-      <div class="well">
-        <form id=signInUser>
-          <input name="credentials[email]" type="text" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input type="Submit" value="Sign In">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseSignIn">
+          <div class="well">
+            <form id=signInUser>
+              <input name="credentials[email]" type="text" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Password">
+              <input type="Submit" value="Sign In">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
 Change password
 </button>
-    <div class="collapse" id="collapseChangePW">
-      <div class="well">
-        <form id="change-password">
-          <input name="passwords[old]" type="password" placeholder="Old Password">
-          <input name="passwords[new]" type="password" placeholder="New Password">
-          <input type="Submit" value="Change Password">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseChangePW">
+          <div class="well">
+            <form id="change-password">
+              <input name="passwords[old]" type="password" placeholder="Old Password">
+              <input name="passwords[new]" type="password" placeholder="New Password">
+              <input type="Submit" value="Change Password">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" id="signOutButton" type="button">
+        <button class="btn btn-primary" id="signOutButton" type="button">
     Sign Out
     </button>
-  </nav>
+      </nav>
 
 
 
 
-  <nav class="log-crud">
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+      <nav class="log-crud">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
   Create Log
   </button>
-    <div class="collapse" id="collapseCreateLog">
-      <div class="well">
-        <form id="createLog">
-          <input name="log[title]" type="text" placeholder="Title">
-          <input name="log[platform]" type="text" placeholder="Platform">
-          <input name="log[players]" type="text" placeholder="Players">
-          <input name="log[stage]" type="text" placeholder="Stage">
-          <input name="log[notes]" type="text" placeholder="Notes">
-          <input type="Submit" value="Create Log">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseCreateLog">
+          <div class="well">
+            <form id="createLog">
+              <input name="log[title]" type="text" placeholder="Title">
+              <input name="log[platform]" type="text" placeholder="Platform">
+              <input name="log[players]" type="text" placeholder="Players">
+              <input name="log[stage]" type="text" placeholder="Stage">
+              <input name="log[notes]" type="text" placeholder="Notes">
+              <input type="Submit" value="Create Log">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
   Select Log by Id
   </button>
-    <div class="collapse" id="collapseSelectLog">
-      <div class="well">
-        <form id="selectLog">
-          <input name="selectLog" type="number" placeholder="Select Log By ID">
-          <input type="Submit" value="Select Log">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseSelectLog">
+          <div class="well">
+            <form id="selectLog">
+              <input name="selectLog" type="number" placeholder="Select Log By ID">
+              <input type="Submit" value="Select Log">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
   Update Log Selected By Id
   </button>
-    <div class="collapse" id="collapseUpdateLog">
-      <div class="well">
-        <form id="updateLog">
-          <input name="log[stage]" type="text" placeholder="Stage">
-          <input name="log[notes]" type="text" placeholder="Notes">
-          <input type="Submit" value="Update Log">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseUpdateLog">
+          <div class="well">
+            <form id="updateLog">
+              <input name="log[stage]" type="text" placeholder="Stage">
+              <input name="log[notes]" type="text" placeholder="Notes">
+              <input type="Submit" value="Update Log">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
     Delete a Log by Id
     </button>
-    <div class="collapse" id="collapseDeleteLog">
-      <div class="well">
-        <form id="deleteLogById">
-          <input name="deleteLogById" type="number" placeholder="Log ID">
-          <input type="submit" value="Delete Log By Id">
-        </form>
-      </div>
-    </div>
+        <div class="collapse" id="collapseDeleteLog">
+          <div class="well">
+            <form id="deleteLogById">
+              <input name="deleteLogById" type="number" placeholder="Log ID">
+              <input type="submit" value="Delete Log By Id">
+            </form>
+          </div>
+        </div>
 
-    <button class="btn btn-primary" id="getLogsButton" type="button">
+        <button class="btn btn-primary" id="getLogsButton" type="button">
     Get All Logs
     </button>
-</nav>
+      </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-6">
-      <div class='info'>==>Info Here<==</div>
-    </div>
-    <div class="col-xs-6">
-      <div class="content">Handlebars Here</div>
-    </div>
-  </div>
-</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="content">Handlebars Here</div>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>

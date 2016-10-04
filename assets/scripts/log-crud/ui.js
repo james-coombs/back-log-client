@@ -7,43 +7,51 @@ const showLogs = require('../templates/logs-listing.handlebars');
 //const showLog = require('../templates/log-display.handlebars');
 
 const onCreateLogSuccess = function(data) {
-    $('.info').text('log created' + data.logs);
+    $('.user-display').text('log created' + data.logs);
   };
 
 const updateLogSuccess = function(data) {
   if (data) {
-    $('.info').text(data.log);
+    $('.user-display').text("Your Log was updated. Re-select it or get all your Logs to see the change.");
   }
 };
 
 const getLogsSuccess = function (data) {
   app.log = data.logs;
-  $('.info').text(data.logs[0].title);
   $('.content').html(showLogs(data));
   console.log(data);
 };
 
 const getLogByIdSuccess = function (data) {
   app.log = data.log;
-  $('.info').html("Title:" + " " + data.log.title + ", " + "Platform:" + " " +
+  $('.user-display').html("Title:" + " " + data.log.title + ", " + "Platform:" + " " +
   data.log.platform + ", " + "Players:" + " " + data.log.players + ", " +
-  "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " +data.log.notes);
-  // $('.content').html(showLogs(log));
+  "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " + data.log.notes + ".");
 };
 
 const deleteLogSuccess = function() {
-  $('.info').text('Log deleted');
+  $('.user-display').text('Your log was deleted.');
 };
 
-const failure = function() {
-  $('.info').text('Log failure');
+const createLogfailure = function() {
+  $('.user-display').text('There was a problem recording your Log. Please try again.');
+};
+
+
+const updateLogfailure = function() {
+  $('.user-display').text('There was a problem creating your Log. Please try again.');
+};
+
+const deleteLogByIdfailure = function() {
+  $('.user-display').text('THere was a problem creating your Log. Please try again.');
 };
 
 module.exports = {
   onCreateLogSuccess,
   updateLogSuccess,
   deleteLogSuccess,
-  failure,
+  createLogfailure,
   getLogsSuccess,
   getLogByIdSuccess,
+  updateLogfailure,
 };

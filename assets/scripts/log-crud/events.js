@@ -12,7 +12,7 @@ let data = getFormFields(event.target);
   event.preventDefault();
   api.createLog(data)
     .done(ui.onCreateLogSuccess)
-    .fail(ui.failure);
+    .fail(ui.createLogfailure);
 };
 
 const onUpdateLog = function(event) {
@@ -21,7 +21,7 @@ const onUpdateLog = function(event) {
     console.log(data);
   api.updateLog(data)
     .done(ui.updateLogSuccess)
-    .fail(ui.failure);
+    .fail(ui.updateLogfailure);
 };
 
 const onDeleteLogById = function(event) {
@@ -30,7 +30,7 @@ const onDeleteLogById = function(event) {
   $('.info').text('Deleted Log');
   api.deleteLogById(data)
     .done(ui.deleteLogByIdSuccess)
-    .fail(ui.failure);
+    .fail(ui.deleteLogByIdfailure);
 };
 
 const onSelectLog = function(event) {
