@@ -2,6 +2,11 @@
   float: right;
   clear: none;
   padding: 2px;
+  display: none;
+}
+
+.for-loged-in-user {
+  display: none;
 }
 
 .user-auth {
@@ -21,11 +26,14 @@ td, th {
 
 .back-logs-table {
   text-align: center;
+  display: inline-block;
+
 }
 
 .content {
-  display: inline-block;
-  clear: both;
+  clear: both;;
+  display: none;
+  text-align: center;
 }
 
 button {

@@ -30,7 +30,7 @@ const onChangePassword = function(event) {
 
 const onSignOutUser = function() {
   event.preventDefault();
-  $('.info').text('Signed out');
+  $('.info').text('You Signed Out');
   api.signOutUser()
     .done(ui.signOutUserSuccess)
     .fail(ui.signOutUserError);

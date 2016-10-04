@@ -15,6 +15,9 @@ const createUserOnError = function() {
 const signInSuccess = function(data) {
   app.user = data.user;
   $('.user-display').text("Hello " + data.user.email + ", " + "welcome to Back\\Log.");
+  $('.log-crud').toggle();
+  $('.for-loged-in-user').toggle();
+  $('.content').toggle();
 };
 
 const signInFailure = function() {
@@ -31,6 +34,10 @@ const changePasswordFailure = function() {
 
 const signOutUserSuccess = function() {
   $('.user-display').text('You are signed out.');
+  $('.log-crud').toggle();
+  $('.for-loged-in-user').toggle();
+  $('.content').toggle();
+  $('.content').html("");
 };
 
 const signOutUserError = function() {

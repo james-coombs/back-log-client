@@ -12,7 +12,7 @@
 <body class="container-fluid">
 
   <div class="jumbotron">
-    <h1>Welcome to Back\Log<small> Create Logs to Save Your Progress in Games</small></h1>
+    <h1>Welcome to Back\Log<br><small> Create Logs to Save Your Game Progress.</small></h1>
   </div>
 
   <div class="page-header">
@@ -47,7 +47,7 @@ Sign In to Back\Log
       </div>
     </div>
 
-    <button type="button" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+    <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
 Change My Password
 </button>
     <div class="collapse" id="collapseChangePW">
@@ -60,12 +60,17 @@ Change My Password
       </div>
     </div>
 
-    <button id="signOutButton" type="button">
+    <button id="signOutButton"  class="for-loged-in-user" type="button">
     Sign Out of Back\Log
     </button>
   </nav>
 
   <nav class="log-crud">
+
+    <button id="getLogsButton" type="button">
+    Show All My Logs
+    </button>
+
     <button type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
   Create A New Log
   </button>
@@ -118,19 +123,9 @@ Change My Password
         </form>
       </div>
     </div>
-
-    <button id="getLogsButton" type="button">
-    Show All My Logs
-    </button>
   </nav>
 
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-xs-12"> -->
-        <div class="content"></div>
-      <!-- </div>
-    </div>
-  </div> -->
+<div class="content"></div>
 </body>
 
 </html>
