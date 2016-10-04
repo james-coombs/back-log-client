@@ -31,6 +31,9 @@ the logs that they own.
 accomplishes the tasks I want it to.
 
 [Back-Log](https://james-coombs.github.io/back-log-client/)
+
 [Back-Log API](https://github.com/james-coombs/back-log-api)
-[Wireframe](http://i.imgur.com/9ja2CUn.jpg
+
+[Wireframe](http://i.imgur.com/9ja2CUn.jpg)
+
 [ERD](http://i.imgur.com/rj8ZSJE.jpg)
