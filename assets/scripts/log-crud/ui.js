@@ -30,10 +30,16 @@ const deleteLogByIdfailure = function() {
 
 const getLogByIdSuccess = function(data) {
   app.log = data.log;
-  $('.user-display').html("Log Id " + data.log.id + ": " + "Title:" + " " + data.log.title + ", " + "Platform:" + " " +
-    data.log.platform + ", " + "Players:" + " " + data.log.players + ", " +
-    "Stage:" + " " + data.log.stage + ", " + "Notes:" + " " + data.log.notes + ". " + "You can now update the selected Log.");
-    $('.update-selected-log-button').toggle();
+  $('.log-content').show();
+  $('.log-heading').text("Log " + data.log.id);
+  $('.log-id').text(data.log.id);
+  $('.log-title').text(data.log.title);
+  $('.log-platform').text(data.log.platform);
+  $('.log-players').text(data.log.players);
+  $('.log-stage').text(data.log.stage);
+  $('.log-notes').text(data.log.notes);
+  $('.user-display').text("You can now update the selected Log.");
+  $('.update-selected-log-button').show();
 };
 
 const getLogByIdFailure = function() {

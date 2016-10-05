@@ -37,7 +37,9 @@ const signOutUserSuccess = function() {
   $('.log-crud').toggle();
   $('.for-loged-in-user').toggle();
   $('.content').toggle();
-  $('.content').html("");
+  $('.log-content').toggle();
+  $('.log-content').text("");
+  $('.content').text("");
   $('.update-selected-log-button').toggle();
 };
 

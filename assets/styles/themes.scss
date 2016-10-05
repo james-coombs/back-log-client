@@ -18,7 +18,8 @@ table {
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #999;
   padding: 0.5rem;
   text-align: left;
@@ -30,8 +31,14 @@ td, th {
 }
 
 .content {
-  clear: both;;
+  clear: both;
   display: none;
+  text-align: center;
+}
+
+.log-content {
+  display: none;
+  clear: both;
   text-align: center;
 }
 
@@ -41,7 +48,7 @@ button {
 }
 
 button:hover {
-    background-color: #d7dbe2;
+  background-color: #d7dbe2;
 }
 
 .update-selected-log-button {

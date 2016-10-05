@@ -20,157 +20,150 @@
   </div>
 
   <nav class="user-auth">
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          Sign Up <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
+    <div>
+      <button type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+Sign Up for Back\Log
+</button>
+      <div class="collapse" id="collapseSignUp">
+        <div class="well">
           <form id="createUser">
             <input name="credentials[email]" type="text" placeholder="Email">
             <input name="credentials[password]" type="password" placeholder="Password">
             <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
             <input type="Submit" value="Create User">
           </form>
-        </ul>
-      </li>
-      <li role="presentation" class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-          Sign In<span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
+        </div>
+      </div>
+    </div>
+    <div>
+      <button type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
+Sign In to Back\Log
+</button>
+      <div class="collapse" id="collapseSignIn">
+        <div class="well">
           <form id=signInUser>
             <input name="credentials[email]" type="text" placeholder="Email">
             <input name="credentials[password]" type="password" placeholder="Password">
             <input type="Submit" value="Sign In">
           </form>
-        </ul>
-      </li>
-    </ul>
-
-    <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
-Change My Password
-</button>
-    <div class="collapse" id="collapseChangePW">
-      <div class="well">
-        <form id="change-password">
-          <input name="passwords[old]" type="password" placeholder="Old Password">
-          <input name="passwords[new]" type="password" placeholder="New Password">
-          <input type="Submit" value="Change Password">
-        </form>
+        </div>
       </div>
     </div>
-
-    <button id="signOutButton" class="for-loged-in-user" type="button">
+    <div>
+      <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+Change My Password
+</button>
+      <div class="collapse" id="collapseChangePW">
+        <div class="well">
+          <form id="change-password">
+            <input name="passwords[old]" type="password" placeholder="Old Password">
+            <input name="passwords[new]" type="password" placeholder="New Password">
+            <input type="Submit" value="Change Password">
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button id="signOutButton" class="for-loged-in-user" type="button">
     Sign Out of Back\Log
     </button>
-
-    <!-- <button type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
-Sign Up for Back\Log
-</button>
-    <div class="collapse" id="collapseSignUp">
-      <div class="well">
-        <form id="createUser">
-          <input name="credentials[email]" type="text" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-          <input type="Submit" value="Create User">
-        </form>
-      </div>
     </div>
-
-    <button type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
-Sign In to Back\Log
-</button>
-    <div class="collapse" id="collapseSignIn">
-      <div class="well">
-        <form id=signInUser>
-          <input name="credentials[email]" type="text" placeholder="Email">
-          <input name="credentials[password]" type="password" placeholder="Password">
-          <input type="Submit" value="Sign In">
-        </form>
-      </div>
-    </div>
-
-    <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
-Change My Password
-</button>
-    <div class="collapse" id="collapseChangePW">
-      <div class="well">
-        <form id="change-password">
-          <input name="passwords[old]" type="password" placeholder="Old Password">
-          <input name="passwords[new]" type="password" placeholder="New Password">
-          <input type="Submit" value="Change Password">
-        </form>
-      </div>
-    </div>
-
-    <button id="signOutButton" class="for-loged-in-user" type="button">
-    Sign Out of Back\Log
-    </button> -->
   </nav>
 
   <nav class="log-crud">
-
-    <button id="getLogsButton" type="button">
+    <div>
+      <button id="getLogsButton" type="button">
     Show All My Logs
     </button>
-
-    <button type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+    </div>
+    <div>
+      <button type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
   Create a New Log
   </button>
-    <div class="collapse" id="collapseCreateLog">
-      <div class="well">
-        <form id="createLog">
-          <input name="log[title]" type="text" placeholder="Title">
-          <input name="log[platform]" type="text" placeholder="Platform">
-          <input name="log[players]" type="text" placeholder="Players">
-          <input name="log[stage]" type="text" placeholder="Stage">
-          <input name="log[notes]" type="text" placeholder="Notes">
-          <input type="Submit" value="Create Log">
-        </form>
+      <div class="collapse" id="collapseCreateLog">
+        <div class="well">
+          <form id="createLog">
+            <input name="log[title]" type="text" placeholder="Title">
+            <input name="log[platform]" type="text" placeholder="Platform">
+            <input name="log[players]" type="text" placeholder="Players">
+            <input name="log[stage]" type="text" placeholder="Stage">
+            <input name="log[notes]" type="text" placeholder="Notes">
+            <input type="Submit" value="Create Log">
+          </form>
+        </div>
       </div>
     </div>
-
-    <button type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+    <div>
+      <button type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
   Select a Log by Id
   </button>
-    <div class="collapse" id="collapseSelectLog">
-      <div class="well">
-        <form id="selectLog">
-          <input name="selectLog" type="number" placeholder="Select Log By ID">
-          <input type="Submit" value="Select Log">
-        </form>
+      <div class="collapse" id="collapseSelectLog">
+        <div class="well">
+          <form id="selectLog">
+            <input name="selectLog" type="number" placeholder="Select Log By ID">
+            <input type="Submit" value="Select Log">
+          </form>
+        </div>
       </div>
     </div>
-
-    <button type="button" class="update-selected-log-button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
+    <div>
+      <button type="button" class="update-selected-log-button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
   Update the Last Selected Log
   </button>
-    <div class="collapse" id="collapseUpdateLog">
-      <div class="well">
-        <form id="updateLog">
-          <input name="log[stage]" type="text" placeholder="Stage">
-          <input name="log[notes]" type="text" placeholder="Notes">
-          <input type="Submit" value="Update Log">
-        </form>
+      <div class="collapse" id="collapseUpdateLog">
+        <div class="well">
+          <form id="updateLog">
+            <input name="log[stage]" type="text" placeholder="Stage">
+            <input name="log[notes]" type="text" placeholder="Notes">
+            <input type="Submit" value="Update Log">
+          </form>
+        </div>
       </div>
     </div>
-
-    <button type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+    <div>
+      <button type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
     Delete a Log by Id
     </button>
-    <div class="collapse" id="collapseDeleteLog">
-      <div class="well">
-        <form id="deleteLogById">
-          <input name="deleteLogById" type="number" placeholder="Log ID">
-          <input type="submit" value="Delete Log By Id">
-        </form>
+      <div class="collapse" id="collapseDeleteLog">
+        <div class="well">
+          <form id="deleteLogById">
+            <input name="deleteLogById" type="number" placeholder="Log ID">
+            <input type="submit" value="Delete Log By Id">
+          </form>
+        </div>
       </div>
     </div>
   </nav>
 
-  <div class="content"></div>
+  <div class="log-info-display">
+    <div class="log-content">
+      <div class="back-logs-table">
+        <h1 class="log-heading"></h1>
+        <table>
+          <colgroup span="6"></colgroup>
+          <tr>
+            <th>Log Id</th>
+            <th>Title</th>
+            <th>Platform</th>
+            <th>Players</th>
+            <th>Stage</th>
+            <th>Notes</th>
+          </tr>
+          <tbody>
+            <tr>
+              <td class="log-id"></td>
+              <td class="log-title"></td>
+              <td class="log-platform"></td>
+              <td class="log-players"></td>
+              <td class="log-stage"></td>
+              <td class="log-notes"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="content"></div>
+  </div>
 </body>
 
 </html>
