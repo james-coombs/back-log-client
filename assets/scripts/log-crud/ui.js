@@ -31,7 +31,7 @@ const deleteLogByIdfailure = function() {
 const getLogByIdSuccess = function(data) {
   app.log = data.log;
   $('.log-content').show();
-  $('.log-heading').text("Log " + data.log.id);
+  $('.log-heading').text("Log " + data.log.id + ":");
   $('.log-id').text(data.log.id);
   $('.log-title').text(data.log.title);
   $('.log-platform').text(data.log.platform);
