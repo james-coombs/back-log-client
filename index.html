@@ -3,83 +3,99 @@
 
 <head>
   <title>Back\Log</title>
-
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-  <script src="assets/scripts/code/konami.js"></script>
+  <!-- <script src="assets/scripts/code/konami.js"></script> -->
 </head>
 
 <body class="container-fluid">
 
-  <div class="jumbotron">
+  <div class="jumbotron col-sm-12">
     <h1>Welcome to Back\Log<br><small> Create Logs to Save Your Game Progress.</small></h1>
+
+    <div class="col-sm-12">
+      <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
+        Sign Up for Back\Log
+      </button>
+    </div>
+
+    <div class="col-sm-12">
+      <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
+        Sign In to Back\Log
+      </button>
+    </div>
+
+    <div class="col-sm-12">
+      <button type="button" class="pull-right for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+        Change My Password
+      </button>
+    </div>
+    <div class="col-sm-12">
+      <button id="signOutButton" class="pull-right for-loged-in-user" type="button">
+        Sign Out of Back\Log
+      </button>
+    </div>
+
+    <div class="col-sm-12">
+      <nav class="user-auth pull-right">
+        <div>
+          <div class="collapse" id="collapseSignUp">
+            <div class="well">
+              <form id="createUser">
+                <input name="credentials[email]" type="text" placeholder="Email">
+                <input name="credentials[password]" type="password" placeholder="Password">
+                <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+                <input type="Submit" value="Create User">
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="pull-right collapse" id="collapseSignIn">
+            <div class="well">
+              <form id=signInUser>
+                <input name="credentials[email]" type="text" placeholder="Email">
+                <input name="credentials[password]" type="password" placeholder="Password">
+                <input type="Submit" value="Sign In">
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="collapse" id="collapseChangePW">
+            <div class="well">
+              <form id="change-password">
+                <input name="passwords[old]" type="password" placeholder="Old Password">
+                <input name="passwords[new]" type="password" placeholder="New Password">
+                <input type="Submit" value="Change Password">
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+      </nav>
+    </div>
   </div>
 
-  <div class="page-header">
+  <div class="page-header col-sm-12">
     <h1 class="user-display"></h1>
   </div>
 
-  <nav class="user-auth">
-    <div>
-      <button type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
-Sign Up for Back\Log
-</button>
-      <div class="collapse" id="collapseSignUp">
-        <div class="well">
-          <form id="createUser">
-            <input name="credentials[email]" type="text" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-            <input type="Submit" value="Create User">
-          </form>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
-Sign In to Back\Log
-</button>
-      <div class="collapse" id="collapseSignIn">
-        <div class="well">
-          <form id=signInUser>
-            <input name="credentials[email]" type="text" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <input type="Submit" value="Sign In">
-          </form>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button type="button" class="for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
-Change My Password
-</button>
-      <div class="collapse" id="collapseChangePW">
-        <div class="well">
-          <form id="change-password">
-            <input name="passwords[old]" type="password" placeholder="Old Password">
-            <input name="passwords[new]" type="password" placeholder="New Password">
-            <input type="Submit" value="Change Password">
-          </form>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button id="signOutButton" class="for-loged-in-user" type="button">
-    Sign Out of Back\Log
-    </button>
-    </div>
-  </nav>
+
 
   <nav class="log-crud">
     <div>
       <button id="getLogsButton" type="button">
-    Show All My Logs
-    </button>
+        Show All My Logs
+      </button>
     </div>
     <div>
       <button type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
-  Create a New Log
-  </button>
+      Create a New Log
+    </button>
       <div class="collapse" id="collapseCreateLog">
         <div class="well">
           <form id="createLog">

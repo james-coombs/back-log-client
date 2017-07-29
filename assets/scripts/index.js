@@ -8,8 +8,12 @@ require('./example');
 
 const userAuth = require('./user-auth/events');
 const logCrud = require('./log-crud/events');
+const kCode = require('./k-code/konami');
+const appUi = require('./app-ui/well-control');
 
 $(() => {
   userAuth.userAddHandlers();
   logCrud.logAddHandlers();
+  kCode.kCodeHandler();
+  appUi.wellControlHandler();
 });
