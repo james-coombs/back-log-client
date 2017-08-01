@@ -5,21 +5,16 @@
   <title>Back\Log</title>
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-  <!-- <script src="assets/scripts/code/konami.js"></script> -->
 </head>
 
 <body class="container-fluid">
-
+  <div class="container">
   <div class="jumbotron col-sm-12">
-    <h1>Welcome to Back\Log<br><small> Create Logs to Save Your Game Progress.</small></h1>
-
-    <div class="col-sm-12">
+    <div class="col-sm-12 init-user-btns">
       <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
         Sign Up for Back\Log
       </button>
-    </div>
 
-    <div class="col-sm-12">
       <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSignIn" aria-expanded="false" aria-controls="collapseSignIn">
         Sign In to Back\Log
       </button>
@@ -38,8 +33,7 @@
 
     <div class="col-sm-12">
       <nav class="user-auth pull-right">
-        <div>
-          <div class="collapse" id="collapseSignUp">
+          <div class="pull-right collapse" id="collapseSignUp">
             <div class="well">
               <form id="createUser">
                 <input name="credentials[email]" type="text" placeholder="Email">
@@ -49,7 +43,6 @@
               </form>
             </div>
           </div>
-        </div>
 
         <div>
           <div class="pull-right collapse" id="collapseSignIn">
@@ -64,7 +57,7 @@
         </div>
 
         <div>
-          <div class="collapse" id="collapseChangePW">
+          <div class="pull-right collapse" id="collapseChangePW">
             <div class="well">
               <form id="change-password">
                 <input name="passwords[old]" type="password" placeholder="Old Password">
@@ -74,46 +67,55 @@
             </div>
           </div>
         </div>
-
-
       </nav>
     </div>
+    <h1>Welcome to Back\Log<br><small> Create Logs to Save Your Game Progress.</small></h1>
   </div>
+</div>
 
   <div class="page-header col-sm-12">
     <h1 class="user-display"></h1>
   </div>
 
+  <div class="col-sm-12 pull-right">
+    <button class="pull-right" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+    Create a New Log
+  </button>
+    <div class="collapse pull-right" id="collapseCreateLog">
+      <div class="well">
+        <form id="createLog">
+          <input name="log[title]" type="text" placeholder="Title">
+          <input name="log[platform]" type="text" placeholder="Platform">
+          <input name="log[players]" type="text" placeholder="Players">
+          <input name="log[stage]" type="text" placeholder="Stage">
+          <input name="log[notes]" type="text" placeholder="Notes">
+          <input type="Submit" value="Create Log">
+        </form>
+      </div>
+    </div>
+  </div>
 
+  <div class="col-sm-12">
+    <div class="log-info-display">
 
-  <nav class="log-crud">
-    <div>
-      <button id="getLogsButton" type="button">
+      <div class="content"></div>
+    </div>
+  </div>
+
+  <nav class="log-crud pull-right">
+    <div class="row">
+      <div class="col-sm-12">
+      <button class="pull-right "id="getLogsButton" type="button">
         Show All My Logs
       </button>
     </div>
-    <div>
-      <button type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
-      Create a New Log
-    </button>
-      <div class="collapse" id="collapseCreateLog">
-        <div class="well">
-          <form id="createLog">
-            <input name="log[title]" type="text" placeholder="Title">
-            <input name="log[platform]" type="text" placeholder="Platform">
-            <input name="log[players]" type="text" placeholder="Players">
-            <input name="log[stage]" type="text" placeholder="Stage">
-            <input name="log[notes]" type="text" placeholder="Notes">
-            <input type="Submit" value="Create Log">
-          </form>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+  </div>
+
+    <div class="col-sm-12">
+      <button class="pull-right "type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
   Select a Log by Id
   </button>
-      <div class="collapse" id="collapseSelectLog">
+      <div class="pull-right collapse" id="collapseSelectLog">
         <div class="well">
           <form id="selectLog">
             <input name="selectLog" type="number" placeholder="Select Log By ID">
@@ -122,11 +124,12 @@
         </div>
       </div>
     </div>
-    <div>
-      <button type="button" class="update-selected-log-button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
+
+    <div class="col-sm-12">
+      <button type="button" class="pull-right update-selected-log-button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
   Update the Last Selected Log
   </button>
-      <div class="collapse" id="collapseUpdateLog">
+      <div class="pull-right collapse" id="collapseUpdateLog">
         <div class="well">
           <form id="updateLog">
             <input name="log[stage]" type="text" placeholder="Stage">
@@ -136,11 +139,12 @@
         </div>
       </div>
     </div>
-    <div>
-      <button type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+
+    <div class="col-sm-12">
+      <button class="pull-right "type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
     Delete a Log by Id
     </button>
-      <div class="collapse" id="collapseDeleteLog">
+      <div class="pull-right collapse" id="collapseDeleteLog">
         <div class="well">
           <form id="deleteLogById">
             <input name="deleteLogById" type="number" placeholder="Log ID">
@@ -150,36 +154,6 @@
       </div>
     </div>
   </nav>
-
-  <div class="log-info-display">
-    <div class="log-content">
-      <div class="back-logs-table">
-        <h1 class="log-heading"></h1>
-        <table>
-          <colgroup span="6"></colgroup>
-          <tr>
-            <th>Log Id</th>
-            <th>Title</th>
-            <th>Platform</th>
-            <th>Players</th>
-            <th>Stage</th>
-            <th>Notes</th>
-          </tr>
-          <tbody>
-            <tr>
-              <td class="log-id"></td>
-              <td class="log-title"></td>
-              <td class="log-platform"></td>
-              <td class="log-players"></td>
-              <td class="log-stage"></td>
-              <td class="log-notes"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="content"></div>
-  </div>
 </body>
 
 </html>

@@ -14,8 +14,22 @@
   padding: 2px;
 }
 
+.user-display {
+  margin-top: 0px;
+}
+
 table {
   border-collapse: collapse;
+}
+
+.jumbotron {
+  padding-bottom: 0px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.page-header {
+  margin-top: 0px;
 }
 
 td,
@@ -27,7 +41,6 @@ th {
 
 .back-logs-table {
   text-align: center;
-  display: inline-block;
 }
 
 .content {
@@ -38,7 +51,6 @@ th {
 
 .log-content {
   display: none;
-  clear: both;
   text-align: center;
 }
 

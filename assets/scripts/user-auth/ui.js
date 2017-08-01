@@ -18,6 +18,8 @@ const signInSuccess = function(data) {
   $('.log-crud').toggle();
   $('.for-loged-in-user').toggle();
   $('.content').toggle();
+  $('.init-user-btns').hide();
+  $('#collapseSignIn').hide();
 };
 
 const signInFailure = function() {
@@ -41,6 +43,7 @@ const signOutUserSuccess = function() {
   $('.log-content').text("");
   $('.content').text("");
   $('.update-selected-log-button').toggle();
+  $('.init-user-btns').show();
 };
 
 const signOutUserError = function() {

@@ -1,26 +1,68 @@
 <div class="back-logs-table">
-  <h1>My Backlog:</h1>
-  <table>
-    <colgroup span="6"></colgroup>
-    <thead>
-      <th>Log Id</th>
-      <th>Title</th>
-      <th>Platform</th>
-      <th>Players</th>
-      <th>Stage</th>
-      <th>Notes</th>
-    </thead>
-    <tbody>
-      {{#each logs}}
-        <tr>
-          <td>{{id}}</td>
-          <td>{{title}}</td>
-          <td>{{platform}}</td>
-          <td>{{players}}</td>
-          <td>{{stage}}</td>
-          <td>{{notes}}</td>
-        </tr>
-      {{/each}}
-    </tbody>
-  </table>
+  <div>
+    <div class="row">
+    {{#each logs}}
+      <div class="col-sm-2">
+        <h6>{{title}}</h6>
+      </div>
+      <div class="col-sm-2">
+        <h6>{{platform}}</h6>
+      </div>
+      <div class="col-sm-2">
+        <h6>{{players}}</h6>
+      </div>
+      <div class="col-sm-2">
+        <h6>{{stage}}</h6>
+      </div>
+      <div class="col-sm-2">
+        <h6>{{notes}}</h6>
+      </div>
+    {{/each}}
+    </div>
+  </div>
 </div>
+
+<!-- <div class="col-sm-12">
+  <div class="log-info-display">
+    <div class="log-content">
+      <div class="back-logs-table">
+        <h1 class="log-heading"></h1>
+        <div class="row">
+          <div class="col-sm-2">
+            <h5>Title</h5>
+          </div>
+          <div class="col-sm-2">
+            <h5>Platform</h5>
+          </div>
+          <div class="col-sm-2">
+            <h5>Players</h5>
+          </div>
+          <div class="col-sm-2">
+            <h5>Stage</h5>
+          </div>
+          <div class="col-sm-2">
+            <h5>Notes</h5>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <h6></h6>
+        </div>
+        <div class="col-sm-2">
+          <h6></h6>
+        </div>
+        <div class="col-sm-2">
+          <h6></h6>
+        </div>
+        <div class="col-sm-2">
+          <h6></h6>
+        </div>
+        <div class="col-sm-2">
+          <h6></h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content"></div>
+  </div>
+</div> -->
