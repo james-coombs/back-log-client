@@ -8,7 +8,6 @@ const ui = require('./ui');
 
 const onCreateLog = function(event) {
   let data = getFormFields(event.target);
-  // console.log(data);
   event.preventDefault();
   api.createLog(data)
     .done(ui.createLogSuccess)
@@ -18,7 +17,6 @@ const onCreateLog = function(event) {
 const onUpdateLog = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  // console.log(data);
   api.updateLog(data)
     .done(ui.updateLogSuccess)
     .fail(ui.updateLogfailure);
@@ -48,11 +46,19 @@ const onGetLogs = function() {
     .fail(ui.getLogsFailure);
 };
 
+const onGetLogsHistory = function() {
+  event.preventDefault();
+  api.getLogs()
+    .done(ui.getLogsHistorySuccess)
+    .fail(ui.getLogsFailure);
+};
+
 const logAddHandlers = function() {
   $('#createLog').on('submit', onCreateLog);
   $('#updateLog').on('submit', onUpdateLog);
   $('#deleteLogById').on('submit', onDeleteLogById);
   $('#getLogsButton').on('click', onGetLogs);
+  $('#getLogsHistoryButton').on('click', onGetLogsHistory);
   $('#selectLog').on('submit', onSelectLog);
 };
 

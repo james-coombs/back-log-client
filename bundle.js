@@ -283,7 +283,6 @@ webpackJsonp([0],[
 
 	var onCreateLog = function onCreateLog(event) {
 	  var data = getFormFields(event.target);
-	  console.log(data);
 	  event.preventDefault();
 	  api.createLog(data).done(ui.onCreateLogSuccess).fail(ui.failure);
 	};
@@ -291,7 +290,6 @@ webpackJsonp([0],[
 	var onUpdateLog = function onUpdateLog(event) {
 	  event.preventDefault();
 	  var data = getFormFields(event.target);
-	  console.log(data);
 	  api.updateLog(data).done(ui.updateLogSuccess).fail(ui.failure);
 	};
 
@@ -421,7 +419,6 @@ webpackJsonp([0],[
 	var getLogsSuccess = function getLogsSuccess(data) {
 	  app.log = data.logs;
 	  $('.info').text(data.logs[0].title);
-	  console.log(data);
 	};
 
 	var getLogByIdSuccess = function getLogByIdSuccess(data) {

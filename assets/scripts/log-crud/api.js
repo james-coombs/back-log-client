@@ -44,6 +44,16 @@ const getLogs = function() {
   });
 };
 
+const getLogsHistory = function() {
+  return $.ajax({
+    url: app.host + '/logs',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
 const deleteLogById = function(data) {
   return $.ajax({
     url: app.host + '/logs/' + data.deleteLogById,
@@ -59,5 +69,6 @@ module.exports = {
   updateLog,
   deleteLogById,
   getLogs,
+  getLogsHistory,
   selectLog,
 };

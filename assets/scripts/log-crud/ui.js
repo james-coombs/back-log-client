@@ -4,6 +4,8 @@ const app = require('../app.js');
 
 const showLogs = require('../templates/logs-listing.handlebars');
 
+const showLogsHistory = require('../templates/logs-history.handlebars');
+
 const createLogSuccess = function() {
   $('.user-display').text('Your new Log was created.');
 };
@@ -49,7 +51,11 @@ const getLogByIdFailure = function() {
 const getLogsSuccess = function(data) {
   app.log = data.logs;
   $('.content').html(showLogs(data));
-  // console.log(data);
+};
+
+const getLogsHistorySuccess = function(data) {
+  app.log = data.logs;
+  $('.content').html(showLogsHistory(data));
 };
 
 const getLogsFailure = function() {
@@ -62,6 +68,7 @@ module.exports = {
   deleteLogByIdSuccess,
   createLogfailure,
   getLogsSuccess,
+  getLogsHistorySuccess,
   getLogByIdSuccess,
   updateLogfailure,
   deleteLogByIdfailure,
