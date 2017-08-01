@@ -227,7 +227,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  host: 'http://localhost:3000' || 'https://back-log.herokuapp.com'
+	  host: 'https://back-log.herokuapp.com'
 	};
 
 	module.exports = app;
