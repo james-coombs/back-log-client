@@ -38,13 +38,11 @@ webpackJsonp([0],[
 	var userAuth = __webpack_require__(4);
 	var logCrud = __webpack_require__(9);
 	var kCode = __webpack_require__(33);
-	// const appUi = require('./app-ui/well-control');
 
 	$(function () {
 	  userAuth.userAddHandlers();
 	  logCrud.logAddHandlers();
 	  kCode.kCodeHandler();
-	  // appUi.wellControlHandler();
 	});
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
