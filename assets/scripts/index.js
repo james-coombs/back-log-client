@@ -10,7 +10,6 @@ const userAuth = require('./user-auth/events');
 const logCrud = require('./log-crud/events');
 const kCode = require('./k-code/konami');
 const appUi = require('./app-ui/well-control');
-const deleteLog = require('./log-crud/delete-log');
 
 $(() => {
   userAuth.userAddHandlers();

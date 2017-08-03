@@ -32,7 +32,12 @@ const onDeleteLogById = function(event) {
 };
 
 const onDeleteLog = function() {
-    alert(this.innerHTML);
+    let data = (this.id);
+    console.log(data);
+    $('.info').text('Deleted Log');
+    api.deleteLogById(data)
+      .done(ui.deleteLogByIdSuccess)
+      .fail(ui.deleteLogByIdfailure);
 };
 
 const onSelectLog = function(event) {

@@ -56,7 +56,7 @@ const getLogsHistory = function() {
 
 const deleteLogById = function(data) {
   return $.ajax({
-    url: app.host + '/logs/' + data.deleteLogById,
+    url: app.host + '/logs/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token,
