@@ -5,12 +5,15 @@
   <title>Back\Log</title>
   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+   <script src="assets/scripts/log-crud/delete-log.js"></script>
 </head>
 
 <body class="container-fluid">
-  <div class="container">
-    <div class="jumbotron col-sm-12">
-    <h1>Welcome to Back\Log<br><small> Create Logs to Save Your Game Progress.</small></h1>
+  <div class="container page-landing">
+    <div class="col-sm-12">
+    <h1>Welcome to Back\Log<br><small>Create Logs to Save Your Game Progress.</small></h1>
+
+    <div class="accordion">
     <div class="col-sm-12 init-user-btns">
       <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSignUp" aria-expanded="false" aria-controls="collapseSignUp">
         Sign Up for Back\Log
@@ -22,18 +25,18 @@
     </div>
 
     <div class="col-sm-12">
-      <button type="button" class="pull-right for-loged-in-user" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
+      <button type="button" class="pull-right for-loged-in-user well-toggle" data-toggle="collapse" data-target="#collapseChangePW" aria-expanded="false" aria-controls="collapseChangePW">
         Change My Password
       </button>
     </div>
     <div class="col-sm-12">
-      <button id="signOutButton" class="pull-right for-loged-in-user" type="button">
+      <button id="signOutButton" class="pull-right for-loged-in-user well-toggle" type="button">
         Sign Out of Back\Log
       </button>
     </div>
 
     <div class="col-sm-12">
-      <nav class="user-auth pull-right">
+      <div class="user-auth pull-right">
         <div class="pull-right collapse" id="collapseSignUp">
           <div class="well">
             <form id="createUser">
@@ -68,29 +71,31 @@
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </div>
   </div>
   </div>
+</div>
 
   <div class="page-header col-sm-12">
     <h1 class="user-display"></h1>
   </div>
 
+  <div class="accordion">
   <div class="log-crud col-sm-12 pull-right">
-    <button class="pull-right" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
       Create a New Log
     </button>
 
-    <button class="pull-right" id="getLogsButton" type="button">
+    <button class="pull-right well-toggle" id="getLogsButton" type="button">
       Show All My Logs
     </button>
 
-    <button class="pull-right" id="getLogsHistoryButton" type="button">
+    <button class="pull-right well-toggle" id="getLogsHistoryButton" type="button">
       Show My log history
     </button>
 
-    <button class="pull-right" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
       Select a Log by Id
     </button>
 
@@ -98,7 +103,7 @@
       Update the Last Selected Log
     </button>
 
-    <button class="pull-right" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
       Delete a Log by Id
   </button>
   </div>
@@ -116,7 +121,6 @@
         </form>
       </div>
     </div>
-
 
     <div class="pull-right collapse" id="collapseSelectLog">
       <div class="well">
@@ -149,8 +153,9 @@
 
   <div class="col-sm-12">
     <div class="log-info-display">
-      <div class="content"></div>
+      <div class="hbs-content"></div>
     </div>
   </div>
+</div>
 </body>
 </html>

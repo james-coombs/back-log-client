@@ -31,6 +31,10 @@ const onDeleteLogById = function(event) {
     .fail(ui.deleteLogByIdfailure);
 };
 
+const onDeleteLog = function() {
+    alert(this.innerHTML);
+};
+
 const onSelectLog = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -57,6 +61,7 @@ const logAddHandlers = function() {
   $('#createLog').on('submit', onCreateLog);
   $('#updateLog').on('submit', onUpdateLog);
   $('#deleteLogById').on('submit', onDeleteLogById);
+  $('.hbs-content').on('click', '[data-control=deleteLog]', onDeleteLog);
   $('#getLogsButton').on('click', onGetLogs);
   $('#getLogsHistoryButton').on('click', onGetLogsHistory);
   $('#selectLog').on('submit', onSelectLog);
@@ -67,6 +72,7 @@ module.exports = {
   onCreateLog,
   onUpdateLog,
   onDeleteLogById,
+  onDeleteLog,
   onGetLogs,
   onSelectLog,
 };

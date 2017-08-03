@@ -50,12 +50,12 @@ const getLogByIdFailure = function() {
 
 const getLogsSuccess = function(data) {
   app.log = data.logs;
-  $('.content').html(showLogs(data));
+  $('.hbs-content').html(showLogs(data));
 };
 
 const getLogsHistorySuccess = function(data) {
   app.log = data.logs;
-  $('.content').html(showLogsHistory(data));
+  $('.hbs-content').html(showLogsHistory(data));
 };
 
 const getLogsFailure = function() {

@@ -1,7 +1,7 @@
 .log-crud {
   float: right;
   clear: none;
-  padding: 2px;
+  padding: 10px 30px 10px 30px;
   display: none;
 }
 
@@ -18,32 +18,23 @@
   margin-top: 0px;
 }
 
-table {
-  border-collapse: collapse;
-}
-
-.jumbotron {
-  padding-bottom: 0px !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+.page-landing {
+  background-color: $grey-background;
+  padding-bottom: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .page-header {
   margin-top: 0px;
-}
-
-td,
-th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  text-align: left;
+  padding: 0px 35px 0px 35px;
 }
 
 .back-logs-table {
   text-align: center;
 }
 
-.content {
+.hbs-content {
   clear: both;
   display: none;
   text-align: center;

@@ -17,7 +17,7 @@ const signInSuccess = function(data) {
   $('.user-display').text("Hello " + data.user.email + ", " + "welcome to Back\\Log.");
   $('.log-crud').toggle();
   $('.for-loged-in-user').toggle();
-  $('.content').toggle();
+  $('.hbs-content').toggle();
   $('.init-user-btns').hide();
   $('#collapseSignIn').hide();
 };
@@ -38,10 +38,10 @@ const signOutUserSuccess = function() {
   $('.user-display').text('You are signed out.');
   $('.log-crud').toggle();
   $('.for-loged-in-user').toggle();
-  $('.content').toggle();
+  $('.hbs-content').toggle();
   $('.log-content').toggle();
   $('.log-content').text("");
-  $('.content').text("");
+  $('.hbs-content').text("");
   $('.update-selected-log-button').toggle();
   $('.init-user-btns').show();
 };
