@@ -57,22 +57,16 @@ const getLogsSuccess = function(data) {
 
 const getLogsHistorySuccess = function(data) {
   app.log = data.logs;
-  console.log(data);
   $('.hbs-content').html(showLogsHistory(data));
 };
 
 const getLogSuccess = function(data) {
   app.log = data.log;
   let log = data.log;
-
   const hbsObject = {};
   const logArr = [];
-
   logArr.push(log);
-
   hbsObject.log = logArr;
-
-  console.log(hbsObject);
   $('.hbs-content').html(displayLog(hbsObject));
 };
 

@@ -25,7 +25,6 @@ const updateLog = function(data) {
 };
 
 const selectLog = function(data) {
-  console.log(data.selectLog)
   return $.ajax({
     url: app.host + '/logs/' + data.selectLog,
     method: 'GET',
@@ -36,7 +35,6 @@ const selectLog = function(data) {
 };
 
 const getLog = function(data) {
-  console.log(data)
   return $.ajax({
     url: app.host + '/logs/' + data,
     method: 'GET',
