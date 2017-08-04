@@ -1,6 +1,6 @@
-{{!-- <div class="back-logs-table">
+<div class="col-sm-12 back-logs-table">
   <div>
-    {{#each logs}}
+    {{#each log}}
     <div class="row">
       <div class="col-sm-2">
         <h6>{{title}}</h6>
@@ -18,9 +18,9 @@
         <h6>{{notes}}</h6>
       </div>
       <div class="col-sm-2">
-        <button>Delete</button>
+        <button class="delete-log" id="{{id}}" data-control="deleteLog">Delete</button>
       </div>
       </div>
     {{/each}}
   </div>
-</div> --}}
+</div>

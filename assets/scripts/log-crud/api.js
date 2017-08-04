@@ -25,8 +25,20 @@ const updateLog = function(data) {
 };
 
 const selectLog = function(data) {
+  console.log(data.selectLog)
   return $.ajax({
     url: app.host + '/logs/' + data.selectLog,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  });
+};
+
+const getLog = function(data) {
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/logs/' + data,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -71,4 +83,5 @@ module.exports = {
   getLogs,
   getLogsHistory,
   selectLog,
+  getLog,
 };

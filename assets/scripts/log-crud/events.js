@@ -32,12 +32,19 @@ const onDeleteLogById = function(event) {
 };
 
 const onDeleteLog = function() {
-    let data = (this.id);
-    console.log(data);
+    let data = this.id;
     $('.info').text('Deleted Log');
     api.deleteLogById(data)
       .done(ui.deleteLogByIdSuccess)
       .fail(ui.deleteLogByIdfailure);
+};
+
+const onShowLog = function() {
+    let data = this.id;
+    $('.info').text('Here\'s your Log:');
+    api.getLog(data)
+      .done(ui.getLogSuccess)
+      .fail(ui.getLogByIdFailure);
 };
 
 const onSelectLog = function(event) {
@@ -56,7 +63,6 @@ const onGetLogs = function() {
 };
 
 const onGetLogsHistory = function() {
-  event.preventDefault();
   api.getLogs()
     .done(ui.getLogsHistorySuccess)
     .fail(ui.getLogsFailure);
@@ -67,6 +73,7 @@ const logAddHandlers = function() {
   $('#updateLog').on('submit', onUpdateLog);
   $('#deleteLogById').on('submit', onDeleteLogById);
   $('.hbs-content').on('click', '[data-control=deleteLog]', onDeleteLog);
+  $('.hbs-content').on('click', '[data-control=showLog]', onShowLog);
   $('#getLogsButton').on('click', onGetLogs);
   $('#getLogsHistoryButton').on('click', onGetLogsHistory);
   $('#selectLog').on('submit', onSelectLog);
@@ -80,4 +87,5 @@ module.exports = {
   onDeleteLog,
   onGetLogs,
   onSelectLog,
+  onShowLog,
 };

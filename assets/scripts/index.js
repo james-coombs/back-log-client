@@ -17,12 +17,3 @@ $(() => {
   kCode.kCodeHandler();
   appUi.wellControlHandler();
 });
-
-$(document).load(function () {
-  $('.delete-log').on('click', function() {console.log('this');});
-});
-
-
-const deleteLogHandler = function() {
-  console.log(this);
-}
