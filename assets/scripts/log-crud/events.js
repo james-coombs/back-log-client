@@ -15,7 +15,6 @@ const onCreateLog = function(event) {
 };
 
 const onUpdateLog = function(event) {
-  console.log('In onUpdateLog');
   event.preventDefault();
   let data = getFormFields(event.target);
   api.updateLog(data)
@@ -59,33 +58,14 @@ const onGetLogsHistory = function() {
     .fail(ui.getLogsFailure);
 };
 
-// const onDeleteLogById = function(event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   $('.info').text('Deleted Log');
-//   api.deleteLogById(data)
-//     .done(ui.deleteLogByIdSuccess)
-//     .fail(ui.deleteLogByIdfailure);
-// };
-
-// const onSelectLog = function(event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.selectLog(data)
-//     .done(ui.getLogByIdSuccess)
-//     .fail(ui.getLogByIdFailure);
-// };
-
 const logAddHandlers = function() {
   $('#createLog').on('submit', onCreateLog);
-  // $('#updateLogForm').on('submit', function(){console.log('Submitted');}); //onUpdateLog
   $('#getLogsButton').on('click', onGetLogs);
   $('#getLogsHistoryButton').on('click', onGetLogsHistory);
   $('.hbs-content').on('click', '[data-control=deleteLog]', onDeleteLog);
   $('.hbs-content').on('click', '[data-control=showLog]', onShowLog);
   $('.hbs-content').on('click', '[data-control=updateLog]', callUpdateTemplate);
-  // $('#selectLog').on('submit', onSelectLog);
-  // $('#deleteLogById').on('submit', onDeleteLogById);
+
 };
 
 module.exports = {
@@ -96,6 +76,4 @@ module.exports = {
   onGetLogs,
   onShowLog,
   callUpdateTemplate,
-  // onSelectLog,
-  // onDeleteLogById,
 };
