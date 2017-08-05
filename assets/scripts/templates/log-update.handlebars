@@ -1,0 +1,39 @@
+<div class="col-sm-12 back-logs-table">
+  <div>
+    <form id="updateLogForm">
+      {{#each log}}
+          <div class="row">
+            <div class="col-sm-2">
+              <h6>{{title}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <h6>{{platform}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <h6>{{players}}</h6>
+            </div>
+            <div class="col-sm-2">
+              <input name="log[stage]" type="text" value="{{stage}}" placeholder="{{stage}}">
+            </div>
+            <div class="col-sm-2">
+              <input name="log[notes]" type="text" value="{{notes}}" placeholder="{{notes}}">
+            </div>
+            <div class="col-sm-2">
+              <input type="Submit" value="Update Log">
+              {{!-- <button class="delete-log" id="{{id}}" data-control="deleteLog">Delete</button> --}}
+            </div>
+          </div>
+        {{/each}}
+      </form>
+  </div>
+</div>
+
+{{!-- <div class="pull-right collapse" id="collapseUpdateLog">
+  <div class="well">
+    <form id="updateLog">
+      <input name="log[stage]" type="text" placeholder="Stage">
+      <input name="log[notes]" type="text" placeholder="Notes">
+      <input type="Submit" value="Update Log">
+    </form>
+  </div>
+</div> --}}

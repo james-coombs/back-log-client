@@ -8,6 +8,8 @@ const showLogsHistory = require('../templates/logs-history.handlebars');
 
 const displayLog = require('../templates/log-display.handlebars');
 
+const updateLog = require('../templates/log-update.handlebars');
+
 const createLogSuccess = function() {
   $('.user-display').text('Your new Log was created.');
 };
@@ -57,24 +59,29 @@ const getLogsSuccess = function(data) {
 
 const getLogsHistorySuccess = function(data) {
   app.log = data.logs;
-  console.log(data);
   $('.hbs-content').html(showLogsHistory(data));
 };
 
 const getLogSuccess = function(data) {
   app.log = data.log;
   let log = data.log;
-
   const hbsObject = {};
   const logArr = [];
-
   logArr.push(log);
-
   hbsObject.log = logArr;
-
-  console.log(hbsObject);
   $('.hbs-content').html(displayLog(hbsObject));
 };
+
+const renderUpdateTemplate = function(data) {
+  app.log = data.log;
+  let log = data.log;
+  const hbsObject = {};
+  const logArr = [];
+  logArr.push(log);
+  hbsObject.log = logArr;
+  $('.hbs-content').html(updateLog(hbsObject));
+  $('#updateLogForm').on('submit', function(){console.log('Submitted');}); //onUpdateLog
+}
 
 const getLogsFailure = function() {
   $('.user-display').text('There was a problem retrieving your Logs. Please Sign In and try again.');
@@ -93,4 +100,5 @@ module.exports = {
   getLogByIdFailure,
   getLogsFailure,
   getLogSuccess,
+  renderUpdateTemplate,
 };

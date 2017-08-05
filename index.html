@@ -94,44 +94,58 @@
       Show My log history
     </button>
 
-    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
+    <!-- <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseSelectLog" aria-expanded="false" aria-controls="collapseSelectLog">
       Select a Log by Id
-    </button>
+    </button> -->
 
     <button type="button" class="pull-right update-selected-log-button" data-toggle="collapse" data-target="#collapseUpdateLog" aria-expanded="false" aria-controls="collapseUpdateLog">
       Update the Last Selected Log
     </button>
 
-    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
+    <!-- <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseDeleteLog" aria-expanded="false" aria-controls="collapseDeleteLog">
       Delete a Log by Id
-  </button>
+  </button> -->
   </div>
 
   <div class="log-crud col-sm-12">
     <div class="collapse pull-right" id="collapseCreateLog">
       <div class="well">
         <form id="createLog">
-          <input name="log[title]" type="text" placeholder="Title">
-          <input name="log[platform]" type="text" placeholder="Platform">
-          <input name="log[players]" type="text" placeholder="Players">
-          <input name="log[stage]" type="text" placeholder="Stage">
-          <input name="log[notes]" type="text" placeholder="Notes">
-          <input type="Submit" value="Create Log">
+          <div class="row">
+            <div class="col-sm-2">
+              <input name="log[title]" type="text" placeholder="Title">
+            </div>
+            <div class="col-sm-2">
+              <input name="log[platform]" type="text" placeholder="Platform">
+            </div>
+            <div class="col-sm-2">
+              <input name="log[players]" type="text" placeholder="Players">
+            </div>
+            <div class="col-sm-2">
+              <input name="log[stage]" type="text" placeholder="Stage">
+            </div>
+            <div class="col-sm-2">
+              <input name="log[notes]" type="text" placeholder="Notes">
+            </div>
+            <div class="col-sm-2">
+              <input type="Submit" value="Create Log" class="pull-right">
+            </div>
+          </div>
         </form>
       </div>
     </div>
 
-    <div class="pull-right collapse" id="collapseSelectLog">
+    <!-- <div class="pull-right collapse" id="collapseSelectLog">
       <div class="well">
         <form id="selectLog">
           <input name="selectLog" type="number" placeholder="Select Log By ID">
           <input type="Submit" value="Select Log">
         </form>
       </div>
-    </div>
+    </div> -->
   </div>
 
-  <div class="pull-right collapse" id="collapseUpdateLog">
+  <!-- <div class="pull-right collapse" id="collapseUpdateLog">
     <div class="well">
       <form id="updateLog">
         <input name="log[stage]" type="text" placeholder="Stage">
@@ -139,16 +153,16 @@
         <input type="Submit" value="Update Log">
       </form>
     </div>
-  </div>
+  </div> -->
 
-  <div class="pull-right collapse" id="collapseDeleteLog">
+  <!-- <div class="pull-right collapse" id="collapseDeleteLog">
     <div class="well">
       <form id="deleteLogById">
         <input name="deleteLogById" type="number" placeholder="Log ID">
         <input type="submit" value="Delete Log By Id">
       </form>
     </div>
-  </div>
+  </div> -->
 
   <div class="col-sm-12">
     <div class="log-info-display">
