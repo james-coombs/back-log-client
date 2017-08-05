@@ -2,6 +2,8 @@
 
 const app = require('../app.js');
 
+const getFormFields = require('../../../lib/get-form-fields');
+
 const showLogs = require('../templates/logs-listing.handlebars');
 
 const showLogsHistory = require('../templates/logs-history.handlebars');
@@ -80,8 +82,19 @@ const renderUpdateTemplate = function(data) {
   logArr.push(log);
   hbsObject.log = logArr;
   $('.hbs-content').html(updateLog(hbsObject));
-  $('#updateLogForm').on('submit', function(){console.log('Submitted');}); //onUpdateLog
-}
+  $('#updateLogForm').on('submit', function(event) {
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    return $.ajax({
+        url: app.host + '/logs/' + app.log.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
+        data: data,
+      });
+    })
+  }
 
 const getLogsFailure = function() {
   $('.user-display').text('There was a problem retrieving your Logs. Please Sign In and try again.');
