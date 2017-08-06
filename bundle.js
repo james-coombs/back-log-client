@@ -258,6 +258,7 @@ webpackJsonp([0],[
 	  $('.hbs-content').toggle();
 	  $('.init-user-btns').toggle();
 	  $('#collapseSignIn').hide();
+	  $('.submit-log').hide();
 	  $('#alternateSignIn').removeClass('in');
 	};
 
@@ -314,9 +315,19 @@ webpackJsonp([0],[
 
 	var ui = __webpack_require__(11);
 
+	var logHasData = function logHasData() {
+	  if (!$('.log-title-input').val()) {
+	    $('.submit-log').hide();
+	    ui.untitledLog();
+	  } else {
+	    $('.submit-log').show();
+	  }
+	};
+
 	var onCreateLog = function onCreateLog(event) {
 	  var data = getFormFields(event.target);
 	  event.preventDefault();
+	  logHasData(data);
 	  api.createLog(data).done(ui.createLogSuccess).fail(ui.createLogfailure);
 	};
 
@@ -353,6 +364,7 @@ webpackJsonp([0],[
 	};
 
 	var logAddHandlers = function logAddHandlers() {
+	  $('.log-title-input').keyup(logHasData);
 	  $('#createLog').on('submit', onCreateLog);
 	  $('#getLogsButton').on('click', onGetLogs);
 	  $('#getLogsHistoryButton').on('click', onGetLogsHistory);
@@ -483,10 +495,14 @@ webpackJsonp([0],[
 
 	var isDataEmpty = function isDataEmpty(data) {
 	  if (data.logs.length === 0) {
-	    $('.user-display').text('404 Your data wasn\'t found.');
+	    $('.user-display').text('404: Your data wasn\'t found.');
 	  } else {
 	    return data;
 	  }
+	};
+
+	var untitledLog = function untitledLog() {
+	  $('.user-display').text('All games have titles...');
 	};
 
 	var createLogSuccess = function createLogSuccess() {
@@ -527,7 +543,7 @@ webpackJsonp([0],[
 	  $('.update-selected-log-button').show();
 	};
 
-	var getLogByIdFailure = function getLogByIdFailure() {
+	var getLogByIdFailure = function getLogByIdFailure(data) {
 	  $('.user-display').text('There was a problem retrieving your Log. Please check the Logs you own and try again.');
 	};
 
@@ -556,7 +572,6 @@ webpackJsonp([0],[
 
 	var renderUpdateTemplate = function renderUpdateTemplate(data) {
 	  app.log = data.log;
-	  isDataEmpty(data);
 	  var log = data.log;
 	  var hbsObject = {};
 	  var logArr = [];
@@ -594,7 +609,8 @@ webpackJsonp([0],[
 	  getLogByIdFailure: getLogByIdFailure,
 	  getLogsFailure: getLogsFailure,
 	  getLogSuccess: getLogSuccess,
-	  renderUpdateTemplate: renderUpdateTemplate
+	  renderUpdateTemplate: renderUpdateTemplate,
+	  untitledLog: untitledLog
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
