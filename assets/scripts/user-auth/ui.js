@@ -18,8 +18,9 @@ const signInSuccess = function(data) {
   $('.log-crud').toggle();
   $('.for-loged-in-user').toggle();
   $('.hbs-content').toggle();
-  $('.init-user-btns').hide();
+  $('.init-user-btns').toggle();
   $('#collapseSignIn').hide();
+  $('#alternateSignIn').removeClass('in');
 };
 
 const signInFailure = function() {
@@ -43,7 +44,8 @@ const signOutUserSuccess = function() {
   $('.log-content').text("");
   $('.hbs-content').text("");
   $('.update-selected-log-button').toggle();
-  $('.init-user-btns').show();
+  $('.init-user-btns').toggle();
+  $('#signInUser')[0].reset();
 };
 
 const signOutUserError = function() {

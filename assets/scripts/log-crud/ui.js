@@ -2,11 +2,23 @@
 
 const app = require('../app.js');
 
+const getFormFields = require('../../../lib/get-form-fields');
+
 const showLogs = require('../templates/logs-listing.handlebars');
 
 const showLogsHistory = require('../templates/logs-history.handlebars');
 
 const displayLog = require('../templates/log-display.handlebars');
+
+const updateLog = require('../templates/log-update.handlebars');
+
+const isDataEmpty = function(data) {
+  if (data.logs.length === 0) {
+  $('.user-display').text('404 Your data wasn\'t found.');
+  } else {
+    return data;
+  }
+}
 
 const createLogSuccess = function() {
   $('.user-display').text('Your new Log was created.');
@@ -52,16 +64,19 @@ const getLogByIdFailure = function() {
 
 const getLogsSuccess = function(data) {
   app.log = data.logs;
+  isDataEmpty(data);
   $('.hbs-content').html(showLogs(data));
 };
 
 const getLogsHistorySuccess = function(data) {
   app.log = data.logs;
+  isDataEmpty(data);
   $('.hbs-content').html(showLogsHistory(data));
 };
 
 const getLogSuccess = function(data) {
   app.log = data.log;
+  isDataEmpty(data);
   let log = data.log;
   const hbsObject = {};
   const logArr = [];
@@ -69,6 +84,29 @@ const getLogSuccess = function(data) {
   hbsObject.log = logArr;
   $('.hbs-content').html(displayLog(hbsObject));
 };
+
+const renderUpdateTemplate = function(data) {
+  app.log = data.log;
+  isDataEmpty(data);
+  let log = data.log;
+  const hbsObject = {};
+  const logArr = [];
+  logArr.push(log);
+  hbsObject.log = logArr;
+  $('.hbs-content').html(updateLog(hbsObject));
+  $('#updateLogForm').on('submit', function(event) {
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    return $.ajax({
+        url: app.host + '/logs/' + app.log.id,
+        method: 'PATCH',
+        headers: {
+          Authorization: 'Token token=' + app.user.token,
+        },
+        data: data,
+      });
+    })
+  }
 
 const getLogsFailure = function() {
   $('.user-display').text('There was a problem retrieving your Logs. Please Sign In and try again.');
@@ -87,4 +125,5 @@ module.exports = {
   getLogByIdFailure,
   getLogsFailure,
   getLogSuccess,
+  renderUpdateTemplate,
 };
