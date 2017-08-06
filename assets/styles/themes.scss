@@ -1,7 +1,7 @@
 .log-crud {
   float: right;
   clear: none;
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px;
   display: none;
 }
 
@@ -15,19 +15,26 @@
 }
 
 .user-display {
-  margin-top: 0px;
+  padding-top: 5px;
+  text-align: center;
+  margin-top: 0;
 }
 
 .page-landing {
-  background-color: $grey-background;
-  padding-bottom: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: inherit;
+  border-radius: 4px;
+  text-align: center;
+  background-color: $grey-blue;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .page-header {
-  margin-top: 0px;
-  padding: 0px 35px 0px 35px;
+  margin-top: 0;
+  padding: 0 35px;
 }
 
 .back-logs-table {
@@ -45,15 +52,50 @@
   text-align: center;
 }
 
+.full-width {
+  width: auto;
+}
+
 button {
+  border-radius: 4px;
   background: none;
-  border: 0;
+  border: 1px $light-grey;
 }
 
 button:hover {
-  background-color: #d7dbe2;
+  border: 1px solid $dark-grey;
+}
+
+.back-log-button {
+  background: none;
+  border: 1px $light-grey;
+}
+
+.back-log-button:hover {
+  border: 1px solid $dark-grey;
+}
+
+.black-text {
+  color: #3e4042;
+}
+
+.well {
+  background-color: $light-grey;
+}
+
+.back-logs-table {
+  border-radius: 4px;
+  background-color: $light-grey;
+}
+
+.back-logs-table .row > div {
+  border-right: 1px solid $very-light-grey;
 }
 
 .update-selected-log-button {
   display: none;
+}
+
+.big-left-margin {
+  margin-left: 500px;
 }
