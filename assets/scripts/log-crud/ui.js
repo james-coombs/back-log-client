@@ -14,11 +14,15 @@ const updateLog = require('../templates/log-update.handlebars');
 
 const isDataEmpty = function(data) {
   if (data.logs.length === 0) {
-  $('.user-display').text('404 Your data wasn\'t found.');
+  $('.user-display').text('404: Your data wasn\'t found.');
   } else {
     return data;
   }
 }
+
+const untitledLog = function() {
+  $('.user-display').text('All games have titles...');
+};
 
 const createLogSuccess = function() {
   $('.user-display').text('Your new Log was created.');
@@ -58,7 +62,7 @@ const getLogByIdSuccess = function(data) {
   $('.update-selected-log-button').show();
 };
 
-const getLogByIdFailure = function() {
+const getLogByIdFailure = function(data) {
   $('.user-display').text('There was a problem retrieving your Log. Please check the Logs you own and try again.');
 };
 
@@ -87,7 +91,6 @@ const getLogSuccess = function(data) {
 
 const renderUpdateTemplate = function(data) {
   app.log = data.log;
-  isDataEmpty(data);
   let log = data.log;
   const hbsObject = {};
   const logArr = [];
@@ -126,4 +129,5 @@ module.exports = {
   getLogsFailure,
   getLogSuccess,
   renderUpdateTemplate,
+  untitledLog,
 };

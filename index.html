@@ -73,6 +73,7 @@
               </form>
             </div>
           </div>
+        </div>
 
           <div class="pull-right collapse" id="collapseChangePW">
             <div class="well">
@@ -95,7 +96,6 @@
       </div>
     </div>
   </div>
-  </div>
 </div>
 
   <div class="page-header col-sm-12">
@@ -103,7 +103,7 @@
   </div>
 
   <div class="log-crud col-sm-12 pull-right">
-    <button class="pull-right well-toggle" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
+    <button class="pull-right well-toggle show-create-log-form" type="button" data-toggle="collapse" data-target="#collapseCreateLog" aria-expanded="false" aria-controls="collapseCreateLog">
       Create a New Log
     </button>
 
@@ -122,7 +122,7 @@
         <form id="createLog">
           <div class="row">
             <div class="col-sm-2">
-              <input name="log[title]" type="text" placeholder="Title">
+              <input name="log[title]" type="text" placeholder="Title" class="log-title-input">
             </div>
             <div class="col-sm-2">
               <input name="log[platform]" type="text" placeholder="Platform">
@@ -137,7 +137,7 @@
               <input name="log[notes]" type="text" placeholder="Notes">
             </div>
             <div class="col-sm-2">
-              <input type="Submit" class="back-log-button pull-right" value="Create Log">
+              <input type="Submit" class="back-log-button pull-right submit-log" value="Create Log">
             </div>
           </div>
         </form>
