@@ -20,6 +20,7 @@ const signInSuccess = function(data) {
   $('.hbs-content').toggle();
   $('.init-user-btns').toggle();
   $('#collapseSignIn').hide();
+  $('.submit-log').hide();
   $('#alternateSignIn').removeClass('in');
 };
 
