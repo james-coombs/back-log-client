@@ -6,9 +6,19 @@ const api = require('./api');
 
 const ui = require('./ui');
 
+const logHasData = function() {
+  if (!$('.log-title-input').val()) {
+    $('.submit-log').hide();
+    ui.untitledLog();
+  } else {
+    $('.submit-log').show();
+  }
+}
+
 const onCreateLog = function(event) {
   let data = getFormFields(event.target);
   event.preventDefault();
+  logHasData(data);
   api.createLog(data)
     .done(ui.createLogSuccess)
     .fail(ui.createLogfailure);
@@ -59,6 +69,7 @@ const onGetLogsHistory = function() {
 };
 
 const logAddHandlers = function() {
+  $('.log-title-input').keyup(logHasData);
   $('#createLog').on('submit', onCreateLog);
   $('#getLogsButton').on('click', onGetLogs);
   $('#getLogsHistoryButton').on('click', onGetLogsHistory);
