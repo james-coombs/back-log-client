@@ -17,7 +17,7 @@
 .user-display {
   padding-top: 5px;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 .page-landing {
@@ -90,9 +90,6 @@ button:hover {
 
 .back-logs-table .row > div {
   border-right: 1px solid $very-light-grey;
-}
-
-.back-logs-table .row > div > button {
 }
 
 .update-selected-log-button {

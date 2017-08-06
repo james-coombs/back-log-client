@@ -20,6 +20,7 @@ const signInSuccess = function(data) {
   $('.hbs-content').toggle();
   $('.init-user-btns').toggle();
   $('#collapseSignIn').hide();
+  $('#alternateSignIn').removeClass('in');
 };
 
 const signInFailure = function() {
@@ -44,6 +45,7 @@ const signOutUserSuccess = function() {
   $('.hbs-content').text("");
   $('.update-selected-log-button').toggle();
   $('.init-user-btns').toggle();
+  $('#signInUser')[0].reset();
 };
 
 const signOutUserError = function() {
