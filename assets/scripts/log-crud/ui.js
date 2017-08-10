@@ -13,7 +13,8 @@ const displayLog = require('../templates/log-display.handlebars');
 const updateLog = require('../templates/log-update.handlebars');
 
 const isDataEmpty = function(data) {
-  if (data.logs.length === 0) {
+  console.log(data)
+  if (data.hasOwnProperty('log') || data.logs.length === 0) {
   $('.user-display').text('404: Your data wasn\'t found.');
   } else {
     return data;
@@ -79,8 +80,9 @@ const getLogsHistorySuccess = function(data) {
 };
 
 const getLogSuccess = function(data) {
+    isDataEmpty(data);
   app.log = data.log;
-  isDataEmpty(data);
+
   let log = data.log;
   const hbsObject = {};
   const logArr = [];

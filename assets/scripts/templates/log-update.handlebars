@@ -18,10 +18,12 @@
             <div class="col-sm-2">
               <input class="log-update-text" name="log[notes]" type="text" value="{{notes}}" placeholder="{{notes}}">
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 pull-right">
               <input type="Submit" class="back-log-button" value="Update Log">
               <br>
+              <hr class="no-margin">
               <button class="delete-log" id="{{id}}" data-control="deleteLog">Delete</button>
+              <hr class="no-margin">
             </div>
           </div>
         {{/each}}
