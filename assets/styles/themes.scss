@@ -42,7 +42,7 @@
 }
 
 .hbs-content {
-  clear: both;
+  //clear: both;
   display: none;
   text-align: center;
 }
@@ -89,7 +89,7 @@ button:hover {
 }
 
 .back-logs-table .row > div {
-  border-right: 1px solid $very-light-grey;
+  //border-right: 1px solid $very-light-grey;
 }
 
 .update-selected-log-button {
@@ -98,4 +98,8 @@ button:hover {
 
 .big-left-margin {
   margin-left: 500px;
+}
+
+.no-margin {
+  margin: 0;
 }
